@@ -3,7 +3,6 @@ import {ReduxActionType} from '../../type'
 
 
 export const increase = (n: number) => {
-    console.log('------- action', n);
     return {
         type: ReduxActionType.INCREASE,
         amount: n

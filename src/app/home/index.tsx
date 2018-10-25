@@ -4,9 +4,20 @@ import './index.css'
 import { connect } from 'react-redux'
 import {increase, decrease} from './actions'
 import { push } from 'react-router-redux'
+// import * as Pref from 'react-addons-perf'
+
 
 
 class Home extends React.PureComponent<any, any>{
+
+    componentDidMount() {
+        // Pref.start()
+    }
+
+    componentDidUpdate(){
+        // Pref.stop()
+    }
+
     render() {
         let {number, increase, decrease, selected} = this.props;
         return (
@@ -28,8 +39,9 @@ class Home extends React.PureComponent<any, any>{
 
 export default connect(
     (state: any) => {
+        let reducer = state.HomeReducer.toJS()
         return {
-            number: state.HomeReducer.number
+            number: reducer.number
         }
     },
     (dispatch: any) => ({
