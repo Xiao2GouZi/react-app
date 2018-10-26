@@ -6,9 +6,9 @@ import { Provider } from "react-redux";
 import createHistory from "history/createBrowserHistory";
 import { Route} from "react-router";
 import { Link } from "react-router-dom"
-import { ConnectedRouter } from "react-router-redux";
+import {ConnectedRouter} from 'react-router-redux';
 const history = createHistory();
-import Store from './store'
+import Store from './redux/store'
 
 
 import registerServiceWorker from './registerServiceWorker';
@@ -17,6 +17,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 import Home from './app/home'
 import Me from './app/me'
+import Test from './app/test'
 import './index.css'
 
 
@@ -31,11 +32,13 @@ ReactDOM.render(
                 <div className={'link'}>
                     <Link to="/home" className={'item'}>Home</Link>
                     <Link to="/me" className={'item'}>Me</Link>
+                    <Link to="/test" className={'item'}>Test</Link>
                 </div>
 
 
                 <Route path="/me" component={Me} />
                 <Route path="/home" component={Home} />
+                <Route path="/test" component={Test} />
 
             </div>
         </ConnectedRouter>

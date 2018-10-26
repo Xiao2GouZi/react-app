@@ -1,3 +1,24 @@
+
+
+
+1.  redux-batched-actions  替换 enableBatching
+export declare function enableBatching<S, A extends Redux.Action = Redux.AnyAction>(reducers: Redux.ReducersMapObject<S, A>): Redux.Reducer<S>;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

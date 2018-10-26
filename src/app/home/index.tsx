@@ -4,40 +4,48 @@ import './index.css'
 import { connect } from 'react-redux'
 import {increase, decrease} from './actions'
 import { push } from 'react-router-redux'
-// import * as Pref from 'react-addons-perf'
+// import { withRouter } from 'react-router-dom'
 
 
 
 class Home extends React.PureComponent<any, any>{
 
-    componentDidMount() {
-        // Pref.start()
-    }
-
-    componentDidUpdate(){
-        // Pref.stop()
-    }
-
     render() {
-        let {number, increase, decrease, selected} = this.props;
+        let {number} = this.props;
         return (
             <div>
                 Some state changes:
                 {number}
-                <button onClick={() => increase(1)}>Increase</button>
-                <button onClick={() => decrease(1)}>Decrease</button>
+                <button onClick={this.increase}>Increase</button>
+                <button onClick={this.decrease}>Decrease</button>
 
-                <button onClick={selected}>点我</button>
+                <button onClick={this.selected}>点我</button>
 
             </div>
         )
+    }
+
+    increase = () => {
+        let { increase } = this.props;
+        increase(1);
+    };
+
+    decrease = () => {
+        let { decrease } = this.props;
+        decrease(1);
+    };
+
+    selected = () => {
+        let { selected } = this.props;
+        // history.push('/test')
+        selected();
     }
 
 
 }
 
 
-export default connect(
+export default  connect(
     (state: any) => {
         let reducer = state.HomeReducer.toJS()
         return {
@@ -55,7 +63,10 @@ export default connect(
         },
 
         selected: () => {
-            dispatch(push('/me'))
+
+            console.log('--------');
+
+            dispatch(push('/test'))
         }
     })
 )(Home)
