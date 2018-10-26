@@ -1,9 +1,7 @@
 import {ReduxActionType} from '../../type'
 import {Map} from 'immutable'
 
-import {
-    LOCATION_CHANGE
-} from 'react-router-redux';
+import {LOCATION_CHANGE} from 'react-router-redux';
 
 const initialState = Map({
     number: 1

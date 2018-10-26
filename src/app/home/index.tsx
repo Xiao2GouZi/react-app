@@ -17,9 +17,7 @@ class Home extends React.PureComponent<any, any>{
                 {number}
                 <button onClick={() => increase(1)}>Increase</button>
                 <button onClick={this.decrease}>Decrease</button>
-
                 <button onClick={() => selected('/test')}>点我</button>
-
             </div>
         )
     }
