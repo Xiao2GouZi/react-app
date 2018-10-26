@@ -1,5 +1,6 @@
 
 import {ReduxActionType} from '../../type'
+import { push } from 'react-router-redux'
 
 
 export const increase = (n: number) => {
@@ -10,9 +11,14 @@ export const increase = (n: number) => {
 };
 
 export const decrease =  (n: number) => {
-    console.log('开始了', n);
     return {
         type: ReduxActionType.DECREASE,
         amount: n
     }
 };
+
+export const selected = (path: string) => {
+    return (dispatch: any) => {
+        dispatch(push(path))
+    }
+}
