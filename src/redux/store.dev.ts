@@ -1,5 +1,5 @@
 
-import { createStore, combineReducers, applyMiddleware, compose} from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
 import { routerReducer, routerMiddleware } from "react-router-redux";
 import rootReducers from "./reducers";
 import { History } from 'history';
@@ -7,6 +7,8 @@ import * as Immutable from 'immutable';
 import {createLogger} from 'redux-logger'  //日志
 import thunk from 'redux-thunk';   //异步
 import { batchStoreEnhancer, batchMiddleware } from './redux-batch-enhancer'   //通知发送多个dispatch
+import { composeWithDevTools } from 'redux-devtools-extension';
+
 
 const store = (history:History) => {
     const middleware = [] as Array<any>;   //中间件集合
@@ -33,14 +35,17 @@ const store = (history:History) => {
         stateTransformer
     });
     middleware.push(loggerMiddleware);
+    const composeEnhancers = composeWithDevTools({
+        // Specify name here, actionsBlacklist, actionsCreators and other options if needed
+    });
     return  createStore(
         combineReducers({
             ...rootReducers,
             router: routerReducer
         }),
-        compose(
+        composeEnhancers(
             applyMiddleware(...middleware),
-            batchStoreEnhancer
+            batchStoreEnhancer,
         )
     )
 };

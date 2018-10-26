@@ -9,11 +9,7 @@ import { Link } from "react-router-dom"
 import {ConnectedRouter} from 'react-router-redux';
 const history = createHistory();
 import Store from './redux/store'
-
-
 import registerServiceWorker from './registerServiceWorker';
-
-
 
 import Home from './app/home'
 import Me from './app/me'
@@ -34,12 +30,9 @@ ReactDOM.render(
                     <Link to="/me" className={'item'}>Me</Link>
                     <Link to="/test" className={'item'}>Test</Link>
                 </div>
-
-
                 <Route path="/me" component={Me} />
                 <Route path="/home" component={Home} />
                 <Route path="/test" component={Test} />
-
             </div>
         </ConnectedRouter>
     </Provider>,
