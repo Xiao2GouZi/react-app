@@ -25,7 +25,7 @@ import './index.css'
 
 
 ReactDOM.render(
-    <Provider store={Store}>
+    <Provider store={Store(history)}>
         {/* ConnectedRouter will use the store from Provider automatically */}
         <ConnectedRouter history={history}>
             <div className={'content'}>
