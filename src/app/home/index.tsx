@@ -9,23 +9,24 @@ import  * as HomeAction from './actions'
 
 class Home extends React.PureComponent<any, any>{
 
+    componentDidMount() {
+        console.log(process.env.NODE_ENV)
+    }
+
+
     render() {
-        let {number, increase, selected} = this.props;
+        let {number, increase, selected, decrease} = this.props;
         return (
             <div>
                 Some state changes:
                 {number}
                 <button onClick={() => increase(1)}>Increase</button>
-                <button onClick={this.decrease}>Decrease</button>
+                <button onClick={() => decrease(1)}>Decrease</button>
                 <button onClick={() => selected('/test')}>点我</button>
             </div>
         )
     }
 
-    decrease = () => {
-        let { decrease } = this.props;
-        decrease(1);
-    };
 }
 
 
