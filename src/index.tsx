@@ -8,8 +8,9 @@ import { Route} from "react-router";
 import { Link } from "react-router-dom"
 import {ConnectedRouter} from 'react-router-redux';
 const history = createHistory();
-import Store from './redux/store'
 import registerServiceWorker from './registerServiceWorker';
+
+import {Store} from './redux'
 
 import Home from './app/home'
 import Me from './app/me'

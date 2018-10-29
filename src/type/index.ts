@@ -1,13 +1,4 @@
 
-export const ReduxActionType = {
-    INCREASE: 'INCREASE',
-    DECREASE: 'DECREASE'
-}
-
-
-
-
-
 
 
 export interface IAsyncResult<T> {

@@ -1,24 +1,19 @@
 
-import {ReduxActionType} from '../../type'
-import { push } from 'react-router-redux'
+import { push } from 'react-router-redux';
+import {INCREASE, DECREASE} from '../../redux/action-type'
 
 
-export const increase = (n: number) => {
-    return {
-        type: ReduxActionType.INCREASE,
-        amount: n
-    }
-};
+import { createAction } from 'redux-actions';
 
-export const decrease =  (n: number) => {
-    return {
-        type: ReduxActionType.DECREASE,
-        amount: n
-    }
-};
+
+
+export const increase =  createAction(INCREASE ,(n: number) => n);
+
+export const decrease =  createAction(DECREASE ,(n: number) => n);
+
 
 export const selected = (path: string) => {
     return (dispatch: any) => {
         dispatch(push(path))
     }
-}
+};

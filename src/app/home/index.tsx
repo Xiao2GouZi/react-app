@@ -10,7 +10,7 @@ import  * as HomeAction from './actions'
 class Home extends React.PureComponent<any, any>{
 
     componentDidMount() {
-        console.log(process.env.NODE_ENV)
+
     }
 
 

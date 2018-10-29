@@ -1,21 +1,18 @@
-import {ReduxActionType} from '../../type'
 import {Map} from 'immutable'
+import { handleActions } from 'redux-actions';
 
-import {LOCATION_CHANGE} from 'react-router-redux';
-
-const initialState = Map({
+const initialState:Map<string, any> = Map({
     number: 1
 });
 
-export default function update(state = initialState, action: any) {
-    switch (action.type) {
-        case LOCATION_CHANGE:
-            return state;
-        case ReduxActionType.INCREASE:
-            return state.set('number', state.get('number') + action.amount);
-        case ReduxActionType.DECREASE:
-            return state.set('number', state.get('number') - action.amount);
-        default:
-            return state
+const HomeReducer = handleActions<Map<string, any>>({
+    INCREASE: (state, action: any) => {
+        return state.set('number', state.get('number') + action.payload);
+    },
+    DECREASE: (state, action: any) => {
+        return state.set('number', state.get('number') - action.payload);
     }
-}
+}, initialState);
+
+export default HomeReducer
+
