@@ -10,8 +10,9 @@ import {urlQuery} from './utils'
 interface IRequestCommonParam {
     url: string,
     init?: RequestInit,
-    body?: string
+    body?: object
 }
+
 
 export async function Common<T = any>(param: IRequestCommonParam): Promise<IAsyncResult<T>> {
     let headers: HeadersInit = {
@@ -29,7 +30,7 @@ export async function Common<T = any>(param: IRequestCommonParam): Promise<IAsyn
     }, Config.requestTimeOut * 1000);
 
     try {
-        const response = await fetch(`${Config.host}${param.url}`, request);
+        const response = await fetch(param.url, request);
         timeoutId && clearTimeout(timeoutId);
         const responseData: IResponse = await response.json();
         const { message, data, status} = responseData;

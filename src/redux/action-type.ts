@@ -1,4 +1,8 @@
 
 
-export const INCREASE = 'INCREASE';
-export const DECREASE = 'DECREASE';
+export const HOME_INCREASE = 'HOME_INCREASE';
+export const HOME_DECREASE = 'HOME_DECREASE';
+export const HOME_LOADING = 'HOME_LOADING';
+export const HOME_LOAD_DATA_SUCCESS = 'HOME_LOAD_DATA_SUCCESS';
+export const HOME_LOAD_DATA_FAIL = 'HOME_LOAD_DATA_FAIL';
+

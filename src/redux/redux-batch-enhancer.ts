@@ -6,21 +6,24 @@ export function batchActions(actions: any) {
     return { type: BATCH, payload: actions };
 }
 
-export function batchMiddleware(action: any) {
 
-    console.log('------------ action', action);
+interface IMiddleware {
+    dispatch: any,
+    getState: any
+}
 
-
+export function batchMiddleware(middlewareAction: IMiddleware) {
+    console.log('--------------', middlewareAction);
     return (next: any) =>
         (action: any) => {
             switch (action.type) {
                 case BATCH: {
-                    action.dispatch({ type: PUSH });
+                    middlewareAction.dispatch({ type: PUSH });
                     const returnArray: Array<any> = [];
                     action.payload.forEach((batchedAction: any) => {
-                        returnArray.push(action.dispatch(batchedAction));
+                        returnArray.push(middlewareAction.dispatch(batchedAction));
                     });
-                    action.dispatch({ type: POP });
+                    middlewareAction.dispatch({ type: POP });
                     return returnArray;
                 }
                 default: {
@@ -31,18 +34,13 @@ export function batchMiddleware(action: any) {
 }
 
 export function batchStoreEnhancer(next: any) {
-
-
-
     let currentListeners:Array<any> = [];
     let nextListeners = currentListeners;
-
     function ensureCanMutateNextListeners() {
         if (nextListeners === currentListeners) {
             nextListeners = currentListeners.slice();
         }
     }
-
     function subscribe(listener: any) {
         if (typeof listener !== 'function') {
             throw new Error('Expected listener to be a function.');
