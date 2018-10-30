@@ -1,3 +1,6 @@
+
+import {MiddlewareAPI, Dispatch} from 'redux'
+
 export const BATCH = 'ENHANCED_BATCHING.BATCH';
 export const PUSH = 'ENHANCED_BATCHING.PUSH';
 export const POP = 'ENHANCED_BATCHING.POP';
@@ -6,24 +9,20 @@ export function batchActions(actions: any) {
     return { type: BATCH, payload: actions };
 }
 
-
-interface IMiddleware {
-    dispatch: any,
-    getState: any
-}
-
-export function batchMiddleware(middlewareAction: IMiddleware) {
-    console.log('--------------', middlewareAction);
-    return (next: any) =>
-        (action: any) => {
+export function batchMiddleware(middlewareApi: MiddlewareAPI) {
+    return (next: any) => {
+        return (action: any) => {
             switch (action.type) {
                 case BATCH: {
-                    middlewareAction.dispatch({ type: PUSH });
-                    const returnArray: Array<any> = [];
+                    middlewareApi.dispatch({ type: PUSH });
+                    const returnArray: Array<Dispatch> = [];
                     action.payload.forEach((batchedAction: any) => {
-                        returnArray.push(middlewareAction.dispatch(batchedAction));
+
+                        console.log('---------', batchedAction);
+
+                        returnArray.push(middlewareApi.dispatch(batchedAction));
                     });
-                    middlewareAction.dispatch({ type: POP });
+                    middlewareApi.dispatch({ type: POP });
                     return returnArray;
                 }
                 default: {
@@ -31,6 +30,7 @@ export function batchMiddleware(middlewareAction: IMiddleware) {
                 }
             }
         };
+    }
 }
 
 export function batchStoreEnhancer(next: any) {

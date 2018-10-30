@@ -23,14 +23,14 @@ class Home extends React.PureComponent<IHomeProps, any>{
 
     componentDidMount() {
         this.props.downloadData();
+        // this.props.goodsData.dataList
     }
 
 
 
 
     render() {
-        let {number, increase, selected, decrease, loading, goodsData} = this.props;
-        console.log('---------', goodsData);
+        let {number, increase, selected, decrease, loading} = this.props;
         return (
             <div>
                 Some state changes:
