@@ -3,14 +3,7 @@ import * as React from 'react'
 import './index.css'
 
 
-export default class Me extends React.PureComponent{
-
-    componentDidMount(){
-
-
-    }
-
-
+export default class Me extends React.PureComponent<any, any>{
 
     render() {
         return (

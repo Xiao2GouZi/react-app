@@ -17,9 +17,6 @@ export function batchMiddleware(middlewareApi: MiddlewareAPI) {
                     middlewareApi.dispatch({ type: PUSH });
                     const returnArray: Array<Dispatch> = [];
                     action.payload.forEach((batchedAction: any) => {
-
-                        console.log('---------', batchedAction);
-
                         returnArray.push(middlewareApi.dispatch(batchedAction));
                     });
                     middlewareApi.dispatch({ type: POP });
@@ -45,36 +42,28 @@ export function batchStoreEnhancer(next: any) {
         if (typeof listener !== 'function') {
             throw new Error('Expected listener to be a function.');
         }
-
         let isSubscribed = true;
-
         ensureCanMutateNextListeners();
         nextListeners.push(listener);
-
         return function unsubscribe() {
             if (!isSubscribed) {
                 return;
             }
-
             isSubscribed = false;
-
             ensureCanMutateNextListeners();
             const index = nextListeners.indexOf(listener);
             nextListeners.splice(index, 1);
         };
     }
-
     function notifyListeners() {
         const listeners = currentListeners = nextListeners;
         for (let i = 0; i < listeners.length; i++) {
             listeners[i]();
         }
     }
-
     return (...args: any) => {
         const store = next(...args);
         const subscribeImmediate = store.subscribe;
-
         let batchDepth = 0;
         function dispatch(...dispatchArgs: any) {
             dispatchArgs.forEach((arg: any) => {
@@ -92,7 +81,6 @@ export function batchStoreEnhancer(next: any) {
             }
             return res;
         }
-
         return {
             ...store,
             dispatch,

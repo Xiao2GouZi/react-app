@@ -1,11 +1,9 @@
 
 import { push } from 'react-router-redux';
-import {HOME_DECREASE, HOME_INCREASE, HOME_LOAD_DATA_FAIL, HOME_LOAD_DATA_SUCCESS, HOME_LOADING} from '../../redux/action-type';
+import { createAction } from 'redux-actions';
 import * as WebApi from './web-api';
 import {ReduxBatch} from '../../redux'
-
-
-import { createAction } from 'redux-actions';
+import {HOME_DECREASE, HOME_INCREASE, HOME_LOAD_DATA_FAIL, HOME_LOAD_DATA_SUCCESS, HOME_LOADING} from '../../redux/action-type';
 
 
 

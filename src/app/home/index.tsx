@@ -1,10 +1,13 @@
 
 import * as React from 'react'
-import './index.css'
 import { connect } from 'react-redux'
 import {bindActionCreators} from 'redux';
+import { Button } from 'antd';
+
 import  * as HomeAction from './actions'
 import {IGetHotGoodsResponse} from '../../type'
+import './index.css'
+
 
 
 interface IHomeProps {
@@ -12,32 +15,38 @@ interface IHomeProps {
     loading: boolean,
     goodsData: IGetHotGoodsResponse,
     loadDataErr: string,
-    downloadData: () => void,
-    increase: (n: number) => void,
-    selected: (n: string) => void,
-    decrease: (n: number) => void
+
+}
+
+interface IHomeActionProps {
+    downloadData: typeof HomeAction.downloadData,
+    increase: typeof HomeAction.increase,
+    selected: typeof HomeAction.selected,
+    decrease: typeof HomeAction.decrease
 }
 
 
-class Home extends React.PureComponent<IHomeProps, any>{
+class Home extends React.PureComponent<IHomeProps & IHomeActionProps>{
 
     componentDidMount() {
         this.props.downloadData();
-        // this.props.goodsData.dataList
     }
 
 
 
 
     render() {
-        let {number, increase, selected, decrease, loading} = this.props;
+        let {number, increase, selected, decrease, loading, loadDataErr} = this.props;
         return (
             <div>
                 Some state changes:
                 {number}
-                <button onClick={() => increase(1)}>Increase</button>
-                <button onClick={() => decrease(1)}>Decrease</button>
-                <button onClick={() => selected('/test')}>点我</button>
+
+                <div>{loadDataErr}</div>
+
+                <Button onClick={() => increase(1)}>Increase</Button>
+                <Button onClick={() => decrease(1)}>Decrease</Button>
+                <Button onClick={() => selected('/test')}>点我</Button>
                 {
                     loading && <div>加载中</div>
                 }
@@ -48,7 +57,7 @@ class Home extends React.PureComponent<IHomeProps, any>{
 
 
 export default  connect(
-    (state: any) => {
+    (state: any): IHomeProps => {
         let reducer = state.HomeReducer.toJS();
         return {
             number: reducer.number,
@@ -57,5 +66,8 @@ export default  connect(
             loadDataErr: reducer.loadDataErr
         }
     },
-    (dispatch: any) => bindActionCreators(HomeAction, dispatch)
+    (dispatch: any): IHomeActionProps => bindActionCreators(HomeAction, dispatch)
 )(Home)
+
+
+// No valid rules have been specified for TypeScript files
