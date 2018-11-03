@@ -1,8 +1,8 @@
 
 import { push } from 'react-router-redux';
 import { createAction } from 'redux-actions';
-import * as WebApi from './web-api';
-import {ReduxBatch} from '../../redux'
+// import * as WebApi from './web-api';
+// import {ReduxBatch} from '../../redux'
 import {HOME_DECREASE, HOME_INCREASE, HOME_LOAD_DATA_FAIL, HOME_LOAD_DATA_SUCCESS, HOME_LOADING} from '../../redux/action-type';
 
 
@@ -20,27 +20,27 @@ export const loadDataFail = createAction(HOME_LOAD_DATA_FAIL, (err: string) => e
 export const downloadData = () => {
     return async (dispatch: any) => {
         dispatch(loadData(true));
-        let response = await WebApi.getHotGoods({
-            "adminId":"A877127",
-            "mobile":"15861097927",
-            "isQueryStock":true,
-            "isQueryMemberPrice":true,
-            "isQueryActivityPrice":true,
-            "isQueryLimitItem":true,
-            "isQueryItemActivities":true,
-            "itemTypes":["1","2"]
-        });
-        if (response.err) {
-            ReduxBatch.batchActions([
-                dispatch(loadData(false)),
-                dispatch(loadDataFail(response.err))
-            ])
-        }else {
-            ReduxBatch.batchActions([
-                dispatch(loadData(false)),
-                dispatch(loadDateSuccess(response.res))
-            ])
-        }
+        // let response = await WebApi.getHotGoods({
+        //     "adminId":"A877127",
+        //     "mobile":"15861097927",
+        //     "isQueryStock":true,
+        //     "isQueryMemberPrice":true,
+        //     "isQueryActivityPrice":true,
+        //     "isQueryLimitItem":true,
+        //     "isQueryItemActivities":true,
+        //     "itemTypes":["1","2"]
+        // });
+        // if (response.err) {
+        //     ReduxBatch.batchActions([
+        //         dispatch(loadData(false)),
+        //         dispatch(loadDataFail(response.err))
+        //     ])
+        // }else {
+        //     ReduxBatch.batchActions([
+        //         dispatch(loadData(false)),
+        //         dispatch(loadDateSuccess(response.res))
+        //     ])
+        // }
     }
 };
 
