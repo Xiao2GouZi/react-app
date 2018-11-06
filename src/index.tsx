@@ -21,7 +21,6 @@ import './index.css'
 import Login from './app/login'
 
 
-
 ReactDOM.render(
     <Provider store={Store(history)}>
         {/* ConnectedRouter will use the store from Provider automatically */}
@@ -44,9 +43,6 @@ ReactDOM.render(
     </Provider>,
     document.getElementById("root")
 );
-
-
-
 
 registerServiceWorker();
 
