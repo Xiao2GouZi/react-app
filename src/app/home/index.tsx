@@ -5,7 +5,6 @@ import {bindActionCreators} from 'redux';
 import { Button } from 'antd';
 
 import  * as HomeAction from './actions'
-import {IGetHotGoodsResponse} from '../../type'
 import './index.css'
 
 
@@ -13,7 +12,6 @@ import './index.css'
 interface IHomeProps {
     number: number,
     loading: boolean,
-    goodsData: IGetHotGoodsResponse,
     loadDataErr: string,
 
 }
@@ -62,12 +60,8 @@ export default  connect(
         return {
             number: reducer.number,
             loading: reducer.loading,
-            goodsData: reducer.goodsData,
             loadDataErr: reducer.loadDataErr
         }
     },
     (dispatch: any): IHomeActionProps => bindActionCreators(HomeAction, dispatch)
 )(Home)
-
-
-// No valid rules have been specified for TypeScript files

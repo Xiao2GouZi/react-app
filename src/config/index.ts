@@ -3,7 +3,7 @@ import {IConfig} from '../type'
 
 const Config = {
 
-    host: 'https://shop-apix.1000.com',
+    host: 'https://www.zhihu.com/',
     requestTimeOut: 10,
     isDev: process.env.NODE_ENV === 'development',
 

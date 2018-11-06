@@ -20,27 +20,7 @@ export const loadDataFail = createAction(HOME_LOAD_DATA_FAIL, (err: string) => e
 export const downloadData = () => {
     return async (dispatch: any) => {
         dispatch(loadData(true));
-        // let response = await WebApi.getHotGoods({
-        //     "adminId":"A877127",
-        //     "mobile":"15861097927",
-        //     "isQueryStock":true,
-        //     "isQueryMemberPrice":true,
-        //     "isQueryActivityPrice":true,
-        //     "isQueryLimitItem":true,
-        //     "isQueryItemActivities":true,
-        //     "itemTypes":["1","2"]
-        // });
-        // if (response.err) {
-        //     ReduxBatch.batchActions([
-        //         dispatch(loadData(false)),
-        //         dispatch(loadDataFail(response.err))
-        //     ])
-        // }else {
-        //     ReduxBatch.batchActions([
-        //         dispatch(loadData(false)),
-        //         dispatch(loadDateSuccess(response.res))
-        //     ])
-        // }
+
     }
 };
 
