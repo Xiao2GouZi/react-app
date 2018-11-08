@@ -28,15 +28,18 @@ export interface IReduxAction {
 }
 
 
-export interface ILoginContenPageProps {
-    login_register: ELoginOrRegister
+export interface ILoginContentPageProps {
+    loginRegister: ELoginOrRegister,
+    loginRegisterLoading: boolean,
+    loginType: ELoginType
 }
 
 
 export interface ILoginContentPageActions {
     checkLoginOrRegister: typeof LoginAction.checkLoginOrRegister,
     login: typeof LoginAction.login,
-    register: typeof LoginAction.register
+    register: typeof LoginAction.register,
+    checkLoginType: typeof LoginAction.checkLoginType
 
 }
 
@@ -46,4 +49,11 @@ export enum ELoginOrRegister {
 }
 
 
+
+export enum ELoginType {
+    QrCode = 'QrCode',
+    OverseasMobile = 'OverseasMobile',
+    SocialContact = 'SocialContact',
+    EmailOrMobile = 'EmailOrMobile'
+}
 

@@ -1,6 +1,8 @@
 
 import { push } from 'react-router-redux';
 import { createAction } from 'redux-actions';
+import {Dispatch} from 'redux'
+
 // import * as WebApi from './web-api';
 // import {ReduxBatch} from '../../redux'
 import {HOME_DECREASE, HOME_INCREASE, HOME_LOAD_DATA_FAIL, HOME_LOAD_DATA_SUCCESS, HOME_LOADING} from '../../redux/action-type';
@@ -18,7 +20,7 @@ export const loadDateSuccess = createAction(HOME_LOAD_DATA_SUCCESS, (data: any) 
 export const loadDataFail = createAction(HOME_LOAD_DATA_FAIL, (err: string) => err);
 
 export const downloadData = () => {
-    return async (dispatch: any) => {
+    return async (dispatch: Dispatch) => {
         dispatch(loadData(true));
 
     }
@@ -27,7 +29,7 @@ export const downloadData = () => {
 
 
 export const selected = (path: string) => {
-    return (dispatch: any) => {
+    return (dispatch: Dispatch) => {
         dispatch(push(path))
     }
 };

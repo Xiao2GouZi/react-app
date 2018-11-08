@@ -7,7 +7,7 @@ import {Button} from 'antd'
 
 
 import * as LoginAction from '../action'
-import {ILoginContentPageActions, ILoginContenPageProps, ELoginOrRegister} from '../../../type'
+import {ILoginContentPageActions, ILoginContentPageProps, ELoginOrRegister, ELoginType} from '../../../type'
 import '../index.less'
 
 
@@ -19,33 +19,16 @@ import '../index.less'
 //二维码
 // https://www.zhihu.com/api/v3/account/api/login/qrcode/b8WPmSVzSSuA4sUq/image
 
-// enum ELoginType {
-//     QrCode = 'QrCode',
-//     OverseasMobile = 'OverseasMobile',
-//     SocialContact = 'SocialContact',
-//     EmailOrMobile = 'EmailOrMobile'
-// }
-
-
-class ContentPage extends React.PureComponent<ILoginContenPageProps & ILoginContentPageActions, any> {
 
 
 
-    constructor(props: any) {
-        super(props);
-
-    }
-
+class ContentPage extends React.PureComponent<ILoginContentPageProps & ILoginContentPageActions, any> {
 
     render(){
-
-        let {login_register} = this.props;
-
+        let {loginRegister, loginRegisterLoading, loginType} = this.props;
         return(
             <div className={'content-page'}>
                 <div className={'card'}>
-
-
                     <div className={'card-header'}>
                        <svg className={'logo'}
                             viewBox={'0 0 200 91'}
@@ -74,9 +57,42 @@ class ContentPage extends React.PureComponent<ILoginContenPageProps & ILoginCont
                             <Button block
                                     size={'large'}
                                     type="primary"
-                                    onClick={this.login}>{login_register === ELoginOrRegister.login ? '登录' : '注册'}</Button>
+                                    loading={loginRegisterLoading}
+                                    onClick={this.login}>{loginRegister === ELoginOrRegister.login ? '登录' : '注册'}</Button>
 
-                            <a></a>
+                            <div className={'login-footer'}>
+                                <Button className={'item'}
+                                        onClick={() => this.checkLoginType(ELoginType.QrCode)}>二维码登录</Button>
+                                <span className={'dot'}>.</span>
+                                <Button className={'item'}
+                                        onClick={() => this.checkLoginType(ELoginType.OverseasMobile)}>{
+                                            loginType === ELoginType.EmailOrMobile ||
+                                            loginType === ELoginType.SocialContact ||
+                                            loginType === ELoginType.QrCode? '海外手机登录' : '邮箱账号登陆'
+                                        }</Button>
+                                <span className={'dot'}>.</span>
+                                {
+                                    loginType === ELoginType.SocialContact ?
+                                        <div>
+                                            <Button icon={'wechat'}
+                                                    target={'_blank'}
+                                                    className={'third-login'}
+                                                    href={'https://open.weixin.qq.com/connect/qrconnect?appid=wx268fcfe924dcb171&redirect_uri=https%3A%2F%2Fwww.zhihu.com%2Foauth%2Fcallback%2Fwechat&response_type=code&scope=snsapi_login&state=36623838623933652d346438392d343236302d396539622d356139663034316430663834#wechat'}/>
+                                            <Button icon={'qq'}
+                                                    target={'_blank'}
+                                                    className={'third-login'}
+                                                    href={'https://api.weibo.com/oauth2/authorize?scope=email&state=36623838623933652d346438392d343236302d396539622d356139663034316430663834&redirect_uri=http%3A%2F%2Fwww.zhihu.com%2Foauth%2Fcallback%2Fsina&response_type=code&client_id=3063806388'}/>
+                                            <Button icon={'weibo'}
+                                                    target={'_blank'}
+                                                    className={'third-login'}
+                                                    href={'https://graph.qq.com/oauth2.0/show?which=Login&display=pc&scope=get_user_info%2Cget_info%2Cadd_t%2Cadd_pic_t%2Cget_other_info%2Cget_fanslist%2Cget_idollist%2Cadd_idol%2Cadd_share&state=36623838623933652d346438392d343236302d396539622d356139663034316430663834&redirect_uri=https%3A%2F%2Fwww.zhihu.com%2Foauth%2Fcallback%2Fqqconn&response_type=code&client_id=100490701'}/>
+                                        </div> :
+                                        <Button className={'item'}
+                                                onClick={() => this.checkLoginType(ELoginType.SocialContact)}>社交账号登陆</Button>
+                                }
+                            </div>
+
+
 
                         </div>
 
@@ -86,18 +102,10 @@ class ContentPage extends React.PureComponent<ILoginContenPageProps & ILoginCont
 
                         <div className={'login-switch'}
                              onClick={this.checkLogin}>
-                            {login_register === ELoginOrRegister.login ? '已有' : '没有'}帐号？
-                            <span>{login_register === ELoginOrRegister.login ? '登录' : '注册'}</span>
+                            {loginRegister === ELoginOrRegister.login ? '已有' : '没有'}帐号？
+                            <span>{loginRegister === ELoginOrRegister.login ? '登录' : '注册'}</span>
                         </div>
-
                     </div>
-
-
-
-
-
-
-
                 </div>
                 <Button className="download-app">下载知乎 App</Button>
             </div>
@@ -108,21 +116,42 @@ class ContentPage extends React.PureComponent<ILoginContenPageProps & ILoginCont
      *  登录/注册
      * */
     login = () => {
-        let {login_register, login, register} = this.props;
-        if (login_register === ELoginOrRegister.login) {
-            login()
-        }else if (login_register === ELoginOrRegister.register) {
-            register()
-        }
+        let {loginRegister, login, register} = this.props;
+        loginRegister === ELoginOrRegister.login ? login() : register()
     };
+
+    /**
+     *  切换登录方式
+     * */
+    checkLoginType = (type: ELoginType) => {
+        let {checkLoginType, loginType} = this.props;
+        if (type === ELoginType.OverseasMobile) {
+            type = loginType === type ? ELoginType.EmailOrMobile : ELoginType.OverseasMobile
+        }
+        checkLoginType(type)
+    };
+
+    // weiChatLogin = () => {
+    //
+    // }
+
+
+
+
+
+
 
     /**
      *  切换登录,注册
      * */
     checkLogin = () => {
-        let {login_register} = this.props;
-        this.props.checkLoginOrRegister(login_register === ELoginOrRegister.login ? ELoginOrRegister.register : ELoginOrRegister.login)
+        let {loginRegister} = this.props;
+        this.props.checkLoginOrRegister(loginRegister === ELoginOrRegister.login ? ELoginOrRegister.register : ELoginOrRegister.login)
     };
+
+
+
+
 
 
 
@@ -132,10 +161,12 @@ class ContentPage extends React.PureComponent<ILoginContenPageProps & ILoginCont
 
 
 export default  connect(
-    (state: any): ILoginContenPageProps => {
+    (state: any): ILoginContentPageProps => {
         let reducer = state.LoginReducer.toJS();
         return {
-            login_register: reducer.login_register,
+            loginRegister: reducer.loginRegister,
+            loginRegisterLoading: reducer.loginRegisterLoading,
+            loginType: reducer.loginType
         }
     },
     (dispatch: any): ILoginContentPageActions => bindActionCreators(LoginAction, dispatch)
