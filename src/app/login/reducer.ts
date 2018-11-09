@@ -19,7 +19,9 @@ const initialState:Map<string, any> = Map({
     },
     acceptCodeType: TSType.ERegisterCheckAcceptCode.Message,
     registerCode: '',
-    registerMobile: ''
+    registerMobile: '',
+    loginMobile: '',
+    loginPassword: ''
 });
 
 let reducers = {};
@@ -57,6 +59,15 @@ reducers[ActionType.LOGIN_REGISTER_CODE_CHANGE] = (state:Map<string, any>, actio
 reducers[ActionType.LOGIN_RESISTER_MOBILE_CHANGE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
     return state.set('registerMobile', action.payload);
 };
+
+reducers[ActionType.LOGIN_MOBILE_EMAIL_MOBILE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
+    return state.set('loginMobile', action.payload);
+};
+
+reducers[ActionType.LOGIN_MOBILE_EMAIL_PASSWORD] = (state:Map<string, any>, action: TSType.IReduxAction) => {
+    return state.set('loginPassword', action.payload);
+};
+
 
 
 

@@ -94,7 +94,20 @@ export const actionRegisterMobileChange = createAction(ActionType.LOGIN_RESISTER
  * */
 export const actionRegisterCodeChange = createAction(ActionType.LOGIN_REGISTER_CODE_CHANGE, (n: string) => n);
 
+/**
+ *  登录输入手机号
+ * */
+export const actionMobileEmailChangeMobile = createAction(ActionType.LOGIN_MOBILE_EMAIL_MOBILE, (n: string) => n);
 
+/**
+ *  登录输入密码
+ * */
+export const actionMobileEmailChangePassword = createAction(ActionType.LOGIN_MOBILE_EMAIL_PASSWORD, (n: string) => n);
+
+/**
+ *  登录,切换短信验证码登录
+ * */
+// export const actionMobileEmailCheckMobileCode = createAction(ActionType.LOGIN_MOBILE_EMAIL_CHECK_MOBILE_CODE, (n: TSType.ELoginType) => n)
 
 
 

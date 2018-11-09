@@ -47,13 +47,12 @@ class MobileLogin extends React.PureComponent<IRegisterPros & IRegisterPropsActi
                 <Divider/>
 
                 <div className={'check-voice-message'}>
-
                     {loginType === ELoginType.MobileCode ?
-                        <Button className={'button-item '}>密码登录（手机号或邮箱）</Button>
-                         :
-                        <span onClick={this.checkVoiceOrMessageCode}>{acceptCodeType === ERegisterCheckAcceptCode.Voice ? '接受语音验证码' : '接受短信验证码'}</span>
+                        <Button className={'button-item'}
+                                onClick={this.checkLoginType}>密码登录（手机号或邮箱）</Button>
+                         : null
                     }
-
+                    <span onClick={this.checkVoiceOrMessageCode}>{acceptCodeType === ERegisterCheckAcceptCode.Voice ? '接受语音验证码' : '接受短信验证码'}</span>
                 </div>
             </div>
         )
@@ -83,7 +82,6 @@ class MobileLogin extends React.PureComponent<IRegisterPros & IRegisterPropsActi
     };
 
 
-
     /**
      *  切换语音验证码和短信验证码
      * */
@@ -91,6 +89,13 @@ class MobileLogin extends React.PureComponent<IRegisterPros & IRegisterPropsActi
         let {actionCheckAcceptCode, acceptCodeType} = this.props;
         let newVar = acceptCodeType === ERegisterCheckAcceptCode.Voice ? ERegisterCheckAcceptCode.Message : ERegisterCheckAcceptCode.Voice;
         actionCheckAcceptCode(newVar)
+    };
+
+    /**
+     *
+     * */
+    checkLoginType = () => {
+        this.props.checkLoginType(ELoginType.EmailOrMobile)
     }
 
 

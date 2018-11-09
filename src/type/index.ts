@@ -58,6 +58,23 @@ export interface IRegisterPropsActions {
     actionSelectedCountry: typeof LoginAction.actionSelectedCountry
     actionRegisterMobileChange: typeof LoginAction.actionRegisterMobileChange
     actionRegisterCodeChange: typeof LoginAction.actionRegisterCodeChange
+    checkLoginType: typeof LoginAction.checkLoginType
+
+}
+
+
+
+
+export interface IMobileEmailProps {
+    loginMobile: string,
+    loginPassword: string
+}
+
+
+export interface IMobileEmailProsActions {
+    actionMobileEmailChangeMobile: typeof LoginAction.actionMobileEmailChangeMobile,
+    actionMobileEmailChangePassword: typeof LoginAction.actionMobileEmailChangePassword,
+    checkLoginType: typeof LoginAction.checkLoginType
 }
 
 
