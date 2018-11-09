@@ -16,11 +16,11 @@ interface IRequestCommonParam {
 
 export async function Common<T = any>(param: IRequestCommonParam): Promise<IAsyncResult<T>> {
     let headers: HeadersInit = {
-        'Content-Type': 'application/json',
-        'mode': 'cors',
+        'Content-Type': 'application/json; charset=utf-8',
         'credentials': 'omit'
     };
     const request: RequestInit = {
+        'mode': 'cors',
         headers,
         ...param.init,
     };

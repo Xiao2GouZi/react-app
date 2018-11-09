@@ -31,7 +31,7 @@ export interface IReduxAction {
 export interface ILoginContentPageProps {
     loginRegister: ELoginOrRegister,
     loginRegisterLoading: boolean,
-    loginType: ELoginType
+    loginType: ELoginType,
 }
 
 
@@ -40,8 +40,26 @@ export interface ILoginContentPageActions {
     login: typeof LoginAction.login,
     register: typeof LoginAction.register,
     checkLoginType: typeof LoginAction.checkLoginType
-
+    downloadSupportCountries: typeof LoginAction.downloadSupportCountries
 }
+
+
+export interface IRegisterPros {
+    supportCountries: Array<ISupportCountriesItem>
+    normalCountry: ISupportCountriesItem,
+    acceptCodeType: ERegisterCheckAcceptCode,
+    registerMobile: string,
+    registerCode: string,
+    loginType: ELoginType,
+}
+
+export interface IRegisterPropsActions {
+    actionCheckAcceptCode: typeof LoginAction.actionCheckAcceptCode
+    actionSelectedCountry: typeof LoginAction.actionSelectedCountry
+    actionRegisterMobileChange: typeof LoginAction.actionRegisterMobileChange
+    actionRegisterCodeChange: typeof LoginAction.actionRegisterCodeChange
+}
+
 
 export enum ELoginOrRegister {
     login = 'login',
@@ -50,10 +68,25 @@ export enum ELoginOrRegister {
 
 
 
+
+
 export enum ELoginType {
     QrCode = 'QrCode',
     OverseasMobile = 'OverseasMobile',
     SocialContact = 'SocialContact',
-    EmailOrMobile = 'EmailOrMobile'
+    EmailOrMobile = 'EmailOrMobile',
+    MobileCode = 'MobileCode',
 }
 
+
+export interface ISupportCountriesItem {
+    is_hot: boolean,
+    code: string,
+    name: string,
+    abbr: string
+}
+
+export enum ERegisterCheckAcceptCode {
+    Voice = 'Voice',
+    Message = 'Message'
+}
