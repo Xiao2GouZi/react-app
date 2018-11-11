@@ -24,7 +24,7 @@ class ContentPage extends React.PureComponent<ILoginContentPageProps & ILoginCon
     }
 
     render(){
-        let {loginRegister, loginRegisterLoading} = this.props;
+        let {loginRegister, loginRegisterLoading, loginType} = this.props;
         return(
             <div className={'content-page'}>
                 <div className={'card'}>
@@ -47,12 +47,17 @@ class ContentPage extends React.PureComponent<ILoginContentPageProps & ILoginCon
                             {
                                 this.loginContent()
                             }
-                            <Button block
-                                    size={'large'}
-                                    type="primary"
-                                    loading={loginRegisterLoading}
-                                    onClick={this.login}
-                                    className={'login'}>{loginRegister === ELoginOrRegister.login ? '登录' : '注册'}</Button>
+                            {
+                                loginType === ELoginType.QrCode ? null :
+                                    <Button block
+                                            size={'large'}
+                                            type="primary"
+                                            loading={loginRegisterLoading}
+                                            onClick={this.login}
+                                            className={'login'}>{loginRegister === ELoginOrRegister.login ? '登录' : '注册'}</Button>
+                            }
+
+
                             {
                                 loginRegister === ELoginOrRegister.register ?
                                     <div className={'login-footer'}>
@@ -63,6 +68,7 @@ class ContentPage extends React.PureComponent<ILoginContentPageProps & ILoginCon
                                                 href={hrefPrivacy}>{'《隐私政策》'}</Button>
                                         <a href={hrefProtocol}>注册机构号</a>
                                     </div>
+                                    : loginType === ELoginType.QrCode ? null
                                     : this.loginType()
                             }
                         </div>

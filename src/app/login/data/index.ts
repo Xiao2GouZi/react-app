@@ -935,6 +935,13 @@ export const hrefProtocol = 'https://www.zhihu.com/terms';
 export const hrefForgetPassWord = 'https://www.zhihu.com/account/password_reset';
 
 
+export const loginQrCode = 'https://www.zhihu.com/static/revved/img/index/qr-code@2x.2607d448.png';
+
+export const zhihuApp = 'https://www.zhihu.com/app/';
+
+
+
+
 
 
 

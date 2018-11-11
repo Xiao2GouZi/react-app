@@ -104,10 +104,6 @@ export const actionMobileEmailChangeMobile = createAction(ActionType.LOGIN_MOBIL
  * */
 export const actionMobileEmailChangePassword = createAction(ActionType.LOGIN_MOBILE_EMAIL_PASSWORD, (n: string) => n);
 
-/**
- *  登录,切换短信验证码登录
- * */
-// export const actionMobileEmailCheckMobileCode = createAction(ActionType.LOGIN_MOBILE_EMAIL_CHECK_MOBILE_CODE, (n: TSType.ELoginType) => n)
 
 
 

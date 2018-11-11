@@ -34,12 +34,14 @@ export interface ILoginContentPageProps {
     loginType: ELoginType,
 }
 
+export interface IQrCodePropsAction {
+    checkLoginType: typeof LoginAction.checkLoginType
+}
 
-export interface ILoginContentPageActions {
+export interface ILoginContentPageActions extends IQrCodePropsAction{
     checkLoginOrRegister: typeof LoginAction.checkLoginOrRegister,
     login: typeof LoginAction.login,
     register: typeof LoginAction.register,
-    checkLoginType: typeof LoginAction.checkLoginType
     downloadSupportCountries: typeof LoginAction.downloadSupportCountries
 }
 
@@ -53,13 +55,11 @@ export interface IRegisterPros {
     loginType: ELoginType,
 }
 
-export interface IRegisterPropsActions {
+export interface IRegisterPropsActions extends IQrCodePropsAction{
     actionCheckAcceptCode: typeof LoginAction.actionCheckAcceptCode
     actionSelectedCountry: typeof LoginAction.actionSelectedCountry
     actionRegisterMobileChange: typeof LoginAction.actionRegisterMobileChange
     actionRegisterCodeChange: typeof LoginAction.actionRegisterCodeChange
-    checkLoginType: typeof LoginAction.checkLoginType
-
 }
 
 
@@ -71,11 +71,30 @@ export interface IMobileEmailProps {
 }
 
 
-export interface IMobileEmailProsActions {
+export interface IMobileEmailProsActions extends IQrCodePropsAction{
     actionMobileEmailChangeMobile: typeof LoginAction.actionMobileEmailChangeMobile,
     actionMobileEmailChangePassword: typeof LoginAction.actionMobileEmailChangePassword,
+}
+
+
+export interface IOverseasMobileProps {
+    supportCountries: Array<ISupportCountriesItem>
+    normalCountry: ISupportCountriesItem,
+    loginMobile: string,
+    loginPassword: string,
+}
+
+
+export interface IOverseasMobilePropsAction {
+    actionMobileEmailChangeMobile: typeof LoginAction.actionMobileEmailChangeMobile;
+    actionMobileEmailChangePassword: typeof LoginAction.actionMobileEmailChangePassword;
+    actionRegisterCodeChange: typeof LoginAction.actionRegisterCodeChange;
+    actionSelectedCountry: typeof LoginAction.actionSelectedCountry;
     checkLoginType: typeof LoginAction.checkLoginType
 }
+
+
+
 
 
 export enum ELoginOrRegister {

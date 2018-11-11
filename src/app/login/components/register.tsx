@@ -10,7 +10,7 @@ let Option = Select.Option;
 
 
 
-class MobileLogin extends React.PureComponent<IRegisterPros & IRegisterPropsActions, any> {
+class MobileLogin extends React.PureComponent<IRegisterPros & IRegisterPropsActions, any>  {
 
     render() {
         let {supportCountries, normalCountry, acceptCodeType, registerMobile, registerCode, loginType} = this.props;

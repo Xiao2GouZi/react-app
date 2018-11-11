@@ -41,7 +41,7 @@
     }
     .card-content{
       .login-content{
-        padding: 0 40px 36px;
+        padding: 0 40px 14px;
         .login-footer{
           margin-top: 16px;
           text-align: center;
@@ -191,6 +191,7 @@
   }
   .input-mobile{
     border: none;
+    padding-left: 0;
   }
   .button-item {
     border: none;
@@ -222,6 +223,9 @@
   .ant-divider-horizontal{
     margin: 10px 0;
   }
+  .ant-select-selection__rendered{
+    margin-left: 0;
+  }
   .check-voice-message{
     height: 20px;
     color: #8590a6;
@@ -246,6 +250,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 14px;
   }
   .ant-input{
     padding: 4px 0px;
@@ -280,6 +285,79 @@
 
 }
 
+
+.qr-code-login{
+  .code-image{
+    margin-bottom: 15px;
+  }
+  p{
+    margin-bottom: 0;
+  }
+  .button-item{
+    border: none;
+    width: auto;
+    padding: 0;
+    transition: none;
+    box-shadow: none;
+    touch-action: none;
+    color: #0084ff;
+  }
+  .ant-divider-horizontal{
+    margin: 30px 0 10px 0;
+  }
+}
+
+.overseas-mobile{
+  .mobile{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .country-item{
+      .ant-select-selection{
+        border: none;
+      }
+    }
+  }
+  .input-mobile{
+    border: none;
+    padding-left: 0;
+  }
+  .ant-input:hover,
+  .ant-input:focus{
+    outline: 0;
+    border: 0 solid #ffffff;
+    box-shadow: 0 0 0 2px #ffffff;
+  }
+  .ant-divider-horizontal{
+    margin: 10px 0;
+  }
+  .password{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ant-btn:hover,
+  .ant-btn:focus,
+  .ant-btn:active {
+    box-shadow: 0 0 0 2px #ffffff;
+    border: 0 solid #ffffff;
+  }
+  .button-item {
+    border: none;
+    width: auto;
+    padding: 0;
+    transition: none;
+    box-shadow: none;
+    touch-action: none;
+  }
+  .mobile-code{
+    color: #175199;
+  }
+  .ant-select-selection__rendered{
+    margin-left: 0;
+  }
+}
 
 
 
