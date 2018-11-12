@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3f00d31-7ada-4215-8f7b-cd9e35dc5dfe" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/action.ts" afterPath="$PROJECT_DIR$/src/app/login/action.ts" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/components/content-page.tsx" afterPath="$PROJECT_DIR$/src/app/login/components/content-page.tsx" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/components/overseas-mobile.tsx" afterPath="$PROJECT_DIR$/src/app/login/components/overseas-mobile.tsx" />
+      <change beforePath="$PROJECT_DIR$/config-overrides.js" afterPath="$PROJECT_DIR$/config-overrides.js" />
       <change beforePath="$PROJECT_DIR$/src/app/login/components/qr-code.tsx" afterPath="$PROJECT_DIR$/src/app/login/components/qr-code.tsx" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/components/register.tsx" afterPath="$PROJECT_DIR$/src/app/login/components/register.tsx" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/data/index.ts" afterPath="$PROJECT_DIR$/src/app/login/data/index.ts" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/index.less" afterPath="$PROJECT_DIR$/src/app/login/index.less" />
-      <change beforePath="$PROJECT_DIR$/src/type/index.ts" afterPath="$PROJECT_DIR$/src/type/index.ts" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,71 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mobile-email.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/login/components/mobile-email.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="41" />
-              <folding>
-                <element signature="e#1#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="overseas-mobile.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/login/components/overseas-mobile.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="20" column="59" lean-forward="true" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
-              <folding>
-                <element signature="e#1#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content-page.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/login/components/content-page.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="45" column="41" lean-forward="true" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="54" />
-              <folding>
-                <element signature="e#1#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reducer.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/login/reducer.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/login/components/register.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="qr-code.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/login/components/qr-code.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+            <state relative-caret-position="555">
+              <caret line="44" column="10" lean-forward="false" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
               <folding>
                 <element signature="e#1#31#0" expanded="true" />
               </folding>
@@ -96,38 +32,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.less" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/login/index.less">
+      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tsconfig.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="248" column="12" lean-forward="true" selection-start-line="248" selection-start-column="12" selection-end-line="248" selection-end-column="12" />
-              <folding>
-                <element signature="e#234#2908#0" expanded="false" />
-                <element signature="e#2918#3703#0" expanded="false" />
-                <element signature="e#5547#5842#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/login/data/index.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="939" column="21" lean-forward="false" selection-start-line="939" selection-start-column="13" selection-end-line="939" selection-end-column="21" />
+            <state relative-caret-position="345">
+              <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="action.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/login/action.ts">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="202">
+              <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config-overrides.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config-overrides.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="53" column="6" lean-forward="false" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -192,7 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/store.dev.ts" />
         <option value="$PROJECT_DIR$/node_modules/redux-batched-actions/lib/index.d.ts" />
         <option value="$PROJECT_DIR$/node_modules/redux-batch-enhancer/lib/index.js" />
         <option value="$PROJECT_DIR$/src/redux/store.prod.ts" />
@@ -213,9 +142,7 @@
         <option value="$PROJECT_DIR$/src/redux/redux-batch-enhancer.ts" />
         <option value="$PROJECT_DIR$/src/redux/index.ts" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/tslint.json" />
-        <option value="$PROJECT_DIR$/config-overrides.js" />
         <option value="$PROJECT_DIR$/src/app/me/index.css" />
         <option value="$PROJECT_DIR$/src/app/home/index.tsx" />
         <option value="$PROJECT_DIR$/src/config/index.ts" />
@@ -237,12 +164,15 @@
         <option value="$PROJECT_DIR$/src/app/login/components/register.tsx" />
         <option value="$PROJECT_DIR$/src/app/login/components/content-page.tsx" />
         <option value="$PROJECT_DIR$/src/app/login/data/index.ts" />
-        <option value="$PROJECT_DIR$/src/app/login/components/qr-code.tsx" />
         <option value="$PROJECT_DIR$/src/app/login/action.ts" />
         <option value="$PROJECT_DIR$/src/app/login/components/overseas-mobile.tsx" />
         <option value="$PROJECT_DIR$/src/type/index.ts" />
         <option value="$PROJECT_DIR$/src/app/login/components/mobile-email.tsx" />
         <option value="$PROJECT_DIR$/src/app/login/index.less" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/app/login/components/qr-code.tsx" />
+        <option value="$PROJECT_DIR$/config-overrides.js" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
       </list>
     </option>
   </component>
@@ -279,7 +209,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -337,12 +266,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -402,7 +333,9 @@
       <workItem from="1541647244971" duration="14799000" />
       <workItem from="1541727031203" duration="16086000" />
       <workItem from="1541760813694" duration="218000" />
-      <workItem from="1541926726245" duration="6173000" />
+      <workItem from="1541926726245" duration="6193000" />
+      <workItem from="1542006293567" duration="933000" />
+      <workItem from="1542011288584" duration="95000" />
     </task>
     <task id="LOCAL-00001" summary="添加基础库">
       <created>1540434398799</created>
@@ -516,11 +449,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541760791906</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="开启登录">
+      <created>1541941454745</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1541941454746</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202478000" />
+    <option name="totallyTimeSpent" value="203526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="828" extended-state="0" />
@@ -530,13 +470,13 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957748" sideWeight="0.5024665" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45774648" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2577465" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36478874" sideWeight="0.49753347" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24788733" sideWeight="0.49753347" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -571,76 +511,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/dev.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/main.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/entry.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/template-manage/index.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/template-manage/store.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/index.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/store.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/web-api.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/Constants.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/common/initOpenApi.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/common/template-common.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/common/const-value.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/common/import-antd.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/page-manage/index.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/page-manage/store.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/page-manage/constant.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/page-manage/ql.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/web_modules/x-site-util/index.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/web_modules/common-util/index.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/web_modules/common-util/noop.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/web_modules/common-util/no-data.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/web_modules/common-util/ga-util.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/web_modules/common-util/date.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/web_modules/expire-lock/tips.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/web_modules/expire-lock/index.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/web_modules/webapi/index.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/web_modules/common/QMIcon/index.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/common/layout/index.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/common/layout/XPane.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/common/layout/XLayout.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/common/layout/MobileWrapper.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/common/layout/Sidebar.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/page-manage/actor/page-manage-actor.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/page-manage/component/share-dialog.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/page-manage/component/page-list-pad.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/page-manage/component/page-list.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/page-manage/component/new-pad-modal.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/page-manage/component/new-page-modal.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/page-manage/component/new-guide.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/page-manage/component/page-manage.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/template-manage/actor/template-actor.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/template-manage/component/share-template-dialog.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/template-manage/component/template.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/template-manage/component/template-manage-main.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/template-manage/component/library.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/actor/menu-setting-actor.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/actor/setting-actor.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/actor/interface.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/actor/classify-actor.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/actor/recommend.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/store-info.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/menu-setting.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/qr-code-display.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/classify-setting.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/homepage-setting.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/sidebar.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/logo-setting.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/seo.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/domain-setting.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/recommendation-setting.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/store-style.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/icon/index.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/emotion-box/index.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/foot-bar-app/index.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/member-preview/index.js" />
-        <option value="$PROJECT_DIR$/../qianmi_project/admin-web/packages/admin-x-site-web/src/apps/x-site/commonly-setting/component/foot-bar/index.js" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -696,27 +566,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/me/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/me/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-scripts-ts/template/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/index.html" />
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -736,9 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -771,14 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/index.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -797,9 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#2#47#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -828,7 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,9 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#63#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -966,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -974,19 +804,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/type/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/login/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="262" column="3" lean-forward="true" selection-start-line="262" selection-start-column="3" selection-end-line="262" selection-end-column="3" />
           <folding>
-            <element signature="e#1#31#0" expanded="true" />
+            <element signature="e#234#2908#0" expanded="false" />
+            <element signature="e#2918#3703#0" expanded="false" />
+            <element signature="e#5547#5842#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/login/components/register.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="41" column="39" lean-forward="false" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/login/reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/login/components/content-page.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="45" column="41" lean-forward="true" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="54" />
+          <caret line="45" column="41" lean-forward="false" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="54" />
           <folding>
-            <element signature="e#1#31#0" expanded="true" />
+            <element signature="e#1#31#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/login/components/overseas-mobile.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="20" column="59" lean-forward="false" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/login/components/mobile-email.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1003,78 +885,42 @@
         <state relative-caret-position="433">
           <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
           <folding>
-            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#0#30#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/login/reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/type/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/login/components/qr-code.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        <state relative-caret-position="555">
+          <caret line="44" column="10" lean-forward="false" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
           <folding>
             <element signature="e#1#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/login/components/register.tsx">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="202">
+          <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/login/components/overseas-mobile.tsx">
+    <entry file="file://$PROJECT_DIR$/config-overrides.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="20" column="59" lean-forward="true" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
-          <folding>
-            <element signature="e#1#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="292">
+          <caret line="53" column="6" lean-forward="false" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/login/components/mobile-email.tsx">
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="41" />
-          <folding>
-            <element signature="e#1#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/login/index.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="248" column="12" lean-forward="true" selection-start-line="248" selection-start-column="12" selection-end-line="248" selection-end-column="12" />
-          <folding>
-            <element signature="e#234#2908#0" expanded="false" />
-            <element signature="e#2918#3703#0" expanded="false" />
-            <element signature="e#5547#5842#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="345">
+          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>

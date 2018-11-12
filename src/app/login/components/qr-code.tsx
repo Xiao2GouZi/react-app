@@ -40,6 +40,6 @@ class QrCode extends React.PureComponent<IQrCodePropsAction, any> {
 }
 
 export default connect(
-    () => {},
+    () => {return},
     (dispatch: Dispatch): IQrCodePropsAction => bindActionCreators(LoginAction, dispatch)
 )(QrCode);
