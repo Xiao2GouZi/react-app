@@ -5,8 +5,6 @@ import {bindActionCreators} from 'redux';
 import { Button } from 'antd';
 
 import  * as HomeAction from './actions'
-import './index.css'
-
 
 
 interface IHomeProps {

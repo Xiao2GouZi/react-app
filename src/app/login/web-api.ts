@@ -1,4 +1,4 @@
-import {IAsyncResult, ISupportCountriesItem} from '../../type';
+import {IAsyncResult, ISupportCountriesItem} from '@/type';
 import * as Data from './data'
 
 

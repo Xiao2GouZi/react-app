@@ -1,5 +1,5 @@
 
-import {IConfig} from '../type'
+import {IConfig} from '@/type'
 
 const Config = {
 
@@ -8,8 +8,6 @@ const Config = {
     isDev: process.env.NODE_ENV === 'development',
 
     defaultImage: 'https://pic.qianmi.com/qmui/app/img/default_square.png'
-
-
 
 
 } as IConfig;

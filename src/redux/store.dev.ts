@@ -6,14 +6,16 @@ import { History } from 'history';
 import * as Immutable from 'immutable';
 import {createLogger} from 'redux-logger'  //日志
 import thunk from 'redux-thunk';   //异步
-import { batchStoreEnhancer, batchMiddleware } from './redux-batch-enhancer'   //通知发送多个dispatch
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { batchStoreEnhancer, batchMiddleware } from './middleware/redux-batch-enhancer'   //通知发送多个dispatch
+import { composeWithDevTools } from 'redux-devtools-extension';   //可视化日志
+import {dataUndefinedMiddleware} from './middleware/undefined-string'
 
 const store = (history:History) => {
     const middleware = [] as Array<any>;   //中间件集合
     middleware.push(routerMiddleware(history));   //
     middleware.push(thunk);   //异步
     middleware.push(batchMiddleware);
+    middleware.push(dataUndefinedMiddleware);
     /**
      *  日志
      */

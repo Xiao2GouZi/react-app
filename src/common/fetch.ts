@@ -2,8 +2,8 @@
  * 网络层封装
  */
 
-import {IAsyncResult, IResponse} from '../type';
-import Config from '../config';
+import {IAsyncResult, IResponse} from '@/type';
+import Config from '@/config';
 import {urlQuery} from './utils'
 
 

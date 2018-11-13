@@ -5,8 +5,7 @@ import {bindActionCreators, Dispatch} from 'redux';
 import {Button} from 'antd'
 
 import * as LoginAction from '../action'
-import {ILoginContentPageActions, ILoginContentPageProps, ELoginOrRegister, ELoginType} from '../../../type'
-import '../index.less'
+import * as TSType from '@/type'
 
 import {zhiHuLogin, hrefWeChatLogin, hrefQQLogin, hrefWeiboLogin, hrefPrivacy, hrefSignUp, hrefProtocol} from '../data'
 
@@ -17,7 +16,7 @@ import QrCode from './qr-code'
 
 
 
-class ContentPage extends React.PureComponent<ILoginContentPageProps & ILoginContentPageActions, any> {
+class ContentPage extends React.PureComponent<TSType.ILoginContentPageProps & TSType.ILoginContentPageActions, any> {
 
     componentDidMount() {
         this.props.downloadSupportCountries();
@@ -48,18 +47,16 @@ class ContentPage extends React.PureComponent<ILoginContentPageProps & ILoginCon
                                 this.loginContent()
                             }
                             {
-                                loginType === ELoginType.QrCode ? null :
+                                loginType === TSType.ELoginType.QrCode ? null :
                                     <Button block
                                             size={'large'}
                                             type="primary"
                                             loading={loginRegisterLoading}
                                             onClick={this.login}
-                                            className={'login'}>{loginRegister === ELoginOrRegister.login ? '登录' : '注册'}</Button>
+                                            className={'login'}>{loginRegister === TSType.ELoginOrRegister.login ? '登录' : '注册'}</Button>
                             }
-
-
                             {
-                                loginRegister === ELoginOrRegister.register ?
+                                loginRegister === TSType.ELoginOrRegister.register ?
                                     <div className={'login-footer'}>
                                         <span>注册即代表同意</span>
                                         <Button className={'item'}
@@ -68,14 +65,14 @@ class ContentPage extends React.PureComponent<ILoginContentPageProps & ILoginCon
                                                 href={hrefPrivacy}>{'《隐私政策》'}</Button>
                                         <a href={hrefProtocol}>注册机构号</a>
                                     </div>
-                                    : loginType === ELoginType.QrCode ? null
+                                    : loginType === TSType.ELoginType.QrCode ? null
                                     : this.loginType()
                             }
                         </div>
                         <div className={'login-switch'}
                              onClick={this.checkLogin}>
-                            {loginRegister === ELoginOrRegister.login ? '已有' : '没有'}帐号？
-                            <span>{loginRegister === ELoginOrRegister.login ? '登录' : '注册'}</span>
+                            {loginRegister === TSType.ELoginOrRegister.login ? '已有' : '没有'}帐号？
+                            <span>{loginRegister === TSType.ELoginOrRegister.login ? '登录' : '注册'}</span>
                         </div>
                     </div>
                 </div>
@@ -89,16 +86,16 @@ class ContentPage extends React.PureComponent<ILoginContentPageProps & ILoginCon
      * */
     loginContent = () => {
         let {loginRegister, loginType} = this.props;
-        if (loginRegister === ELoginOrRegister.register )  {
+        if (loginRegister === TSType.ELoginOrRegister.register )  {
             return <Register/>
         }else {
-            if (loginType === ELoginType.EmailOrMobile) {
+            if (loginType === TSType.ELoginType.EmailOrMobile) {
                 return <MobileEmail/>
-            } else if (loginType === ELoginType.QrCode) {
+            } else if (loginType === TSType.ELoginType.QrCode) {
                 return <QrCode/>
-            } else if (loginType === ELoginType.OverseasMobile) {
+            } else if (loginType === TSType.ELoginType.OverseasMobile) {
                 return <OverseasMobile/>
-            } else if (loginType === ELoginType.MobileCode) {
+            } else if (loginType === TSType.ELoginType.MobileCode) {
                 return <Register/>
             }
             return <MobileEmail/>
@@ -113,17 +110,17 @@ class ContentPage extends React.PureComponent<ILoginContentPageProps & ILoginCon
         return (
             <div className={'login-footer'}>
                 <Button className={'item'}
-                        onClick={() => this.checkLoginType(ELoginType.QrCode)}>二维码登录</Button>
+                        onClick={() => this.checkLoginType(TSType.ELoginType.QrCode)}>二维码登录</Button>
                 <span className={'dot'}>.</span>
                 <Button className={'item'}
-                        onClick={() => this.checkLoginType(ELoginType.OverseasMobile)}>{
-                    loginType === ELoginType.EmailOrMobile ||
-                    loginType === ELoginType.SocialContact ||
-                    loginType === ELoginType.QrCode? '海外手机登录' : '邮箱账号登陆'
+                        onClick={() => this.checkLoginType(TSType.ELoginType.OverseasMobile)}>{
+                    loginType === TSType.ELoginType.EmailOrMobile ||
+                    loginType === TSType.ELoginType.SocialContact ||
+                    loginType === TSType.ELoginType.QrCode? '海外手机登录' : '邮箱账号登陆'
                 }</Button>
                 <span className={'dot'}>.</span>
                 {
-                    loginType === ELoginType.SocialContact ?
+                    loginType === TSType.ELoginType.SocialContact ?
                         <div>
                             <Button icon={'wechat'}
                                     target={'_blank'}
@@ -139,7 +136,7 @@ class ContentPage extends React.PureComponent<ILoginContentPageProps & ILoginCon
                                     href={hrefQQLogin}/>
                         </div> :
                         <Button className={'item'}
-                                onClick={() => this.checkLoginType(ELoginType.SocialContact)}>社交账号登陆</Button>
+                                onClick={() => this.checkLoginType(TSType.ELoginType.SocialContact)}>社交账号登陆</Button>
                 }
             </div>
         )
@@ -151,16 +148,16 @@ class ContentPage extends React.PureComponent<ILoginContentPageProps & ILoginCon
      * */
     login = () => {
         let {loginRegister, login, register} = this.props;
-        loginRegister === ELoginOrRegister.login ? login() : register()
+        loginRegister === TSType.ELoginOrRegister.login ? login() : register()
     };
 
     /**
      *  切换登录方式
      * */
-    checkLoginType = (type: ELoginType) => {
+    checkLoginType = (type: TSType.ELoginType) => {
         let {checkLoginType, loginType} = this.props;
-        if (type === ELoginType.OverseasMobile) {
-            type = loginType === type ? ELoginType.EmailOrMobile : ELoginType.OverseasMobile
+        if (type === TSType.ELoginType.OverseasMobile) {
+            type = loginType === type ? TSType.ELoginType.EmailOrMobile : TSType.ELoginType.OverseasMobile
         }
         checkLoginType(type)
     };
@@ -170,28 +167,13 @@ class ContentPage extends React.PureComponent<ILoginContentPageProps & ILoginCon
      * */
     checkLogin = () => {
         let {loginRegister} = this.props;
-        this.props.checkLoginOrRegister(loginRegister === ELoginOrRegister.login ? ELoginOrRegister.register : ELoginOrRegister.login)
+        this.props.checkLoginOrRegister(loginRegister === TSType.ELoginOrRegister.login ? TSType.ELoginOrRegister.register : TSType.ELoginOrRegister.login)
     };
-
-
-
-
-
-
-
-
-
 }
 
-
 export default connect(
-    (state: any): ILoginContentPageProps => {
-        let reducer = state.LoginReducer.toJS();
-        return {
-            loginRegister: reducer.loginRegister,
-            loginRegisterLoading: reducer.loginRegisterLoading,
-            loginType: reducer.loginType,
-        }
+    (state: any): TSType.ILoginContentPageProps => {
+        return state.LoginReducer.toJS();
     },
     (dispatch: Dispatch) => bindActionCreators(LoginAction, dispatch)
 )(ContentPage)

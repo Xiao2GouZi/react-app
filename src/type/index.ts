@@ -32,6 +32,7 @@ export interface ILoginContentPageProps {
     loginRegister: ELoginOrRegister,
     loginRegisterLoading: boolean,
     loginType: ELoginType,
+    loginStatus: boolean
 }
 
 export interface IQrCodePropsAction {
@@ -126,3 +127,20 @@ export enum ERegisterCheckAcceptCode {
     Voice = 'Voice',
     Message = 'Message'
 }
+
+export enum EDataType {
+    String = 'String',
+    Object = 'Object',
+    Array = 'Array',
+    Function = 'Function',
+    Number = 'Number',
+    Boolean = 'Boolean',
+    Null = 'Null',
+    Undefined = 'Undefined',
+    RegExp = 'RegExp',
+    Date = 'Date'
+}
+
+
+
+

@@ -5,12 +5,12 @@ import {bindActionCreators, Dispatch} from "redux";
 import {Select, Divider, Input, Icon, Button} from 'antd'
 
 import * as LoginAction from "../action";
-import {ELoginType, IOverseasMobileProps, IOverseasMobilePropsAction} from "../../../type";
+import * as TSType from "@/type";
 import {hrefForgetPassWord} from "../data";
 
 let Option = Select.Option;
 
-class OverseasMobile extends React.PureComponent<IOverseasMobileProps & IOverseasMobilePropsAction, any> {
+class OverseasMobile extends React.PureComponent<TSType.IOverseasMobileProps & TSType.IOverseasMobilePropsAction, any> {
 
     render(){
         let {normalCountry, supportCountries, loginPassword, loginMobile} = this.props;
@@ -60,7 +60,7 @@ class OverseasMobile extends React.PureComponent<IOverseasMobileProps & IOversea
      *  切换到验证码登录
      * */
     checkoutMobileCode = () => {
-        this.props.checkLoginType(ELoginType.MobileCode)
+        this.props.checkLoginType(TSType.ELoginType.MobileCode)
     };
 
 
@@ -90,15 +90,9 @@ class OverseasMobile extends React.PureComponent<IOverseasMobileProps & IOversea
 }
 
 export default connect(
-    (state: any): IOverseasMobileProps => {
-        let reducer = state.LoginReducer.toJS();
-        return {
-            supportCountries: reducer.supportCountries,
-            normalCountry: reducer.normalCountry,
-            loginMobile: reducer.loginMobile,
-            loginPassword: reducer.loginPassword,
-        }
+    (state: any): TSType.IOverseasMobileProps => {
+        return state.LoginReducer.toJS();
     },
-    (dispatch: Dispatch): IOverseasMobilePropsAction => bindActionCreators(LoginAction, dispatch)
+    (dispatch: Dispatch): TSType.IOverseasMobilePropsAction => bindActionCreators(LoginAction, dispatch)
 )(OverseasMobile);
 

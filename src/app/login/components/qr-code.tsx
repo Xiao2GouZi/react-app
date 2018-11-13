@@ -2,14 +2,15 @@
 import * as React from 'react'
 import {Divider, Button} from 'antd'
 import {connect} from 'react-redux'
+import {bindActionCreators, Dispatch} from "redux";
+
 
 import {loginQrCode, zhihuApp} from '../data'
 import * as LoginAction from "../action";
-import {bindActionCreators, Dispatch} from "redux";
-import {IQrCodePropsAction, ELoginType} from "../../../type";
+import * as TSType from "@/type";
 
 
-class QrCode extends React.PureComponent<IQrCodePropsAction, any> {
+class QrCode extends React.PureComponent<TSType.IQrCodePropsAction, any> {
 
     render(){
         return(
@@ -34,12 +35,12 @@ class QrCode extends React.PureComponent<IQrCodePropsAction, any> {
      *  切换登录模式
      * */
     changeLoginType = () =>{
-        this.props.checkLoginType(ELoginType.EmailOrMobile)
+        this.props.checkLoginType(TSType.ELoginType.EmailOrMobile)
     }
 
 }
 
 export default connect(
     () => {return},
-    (dispatch: Dispatch): IQrCodePropsAction => bindActionCreators(LoginAction, dispatch)
+    (dispatch: Dispatch): TSType.IQrCodePropsAction => bindActionCreators(LoginAction, dispatch)
 )(QrCode);

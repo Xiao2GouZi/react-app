@@ -1,14 +1,13 @@
 import {Map} from 'immutable'
 import { handleActions } from 'redux-actions';
 
-import * as ActionType from '../../redux/action-type'
-import * as TSType from '../../type'
-
-
+import * as TSType from '@/type'
+import * as ActionTypes from '@/redux/action-type'
 
 const initialState:Map<string, any> = Map({
     loginRegister: TSType.ELoginOrRegister.login,
     loginRegisterLoading: false,
+    loginStatus: true,
     loginType: TSType.ELoginType.EmailOrMobile,
     supportCountries: [],
     normalCountry: {
@@ -25,53 +24,58 @@ const initialState:Map<string, any> = Map({
 });
 
 let reducers = {};
-reducers[ActionType.LOGIN_CHECK_LOGIN_OR_REGISTER] = (state:Map<string, any>, action: TSType.IReduxAction) => {
+reducers[ActionTypes.LOGIN_CHECK_LOGIN_OR_REGISTER] = (state:Map<string, any>, action: TSType.IReduxAction) => {
     return state.set('loginRegister', action.payload);
 };
 
-reducers[ActionType.LOGIN_LOGIN_LOADING] = (state:Map<string, any>, action: TSType.IReduxAction) => {
+reducers[ActionTypes.LOGIN_LOGIN_LOADING] = (state:Map<string, any>, action: TSType.IReduxAction) => {
     return state.set('loginRegisterLoading', action.payload);
 };
 
-reducers[ActionType.LOGIN_CHECK_LOGIN_TYPE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
-    return state.set('loginType', action.payload);
+reducers[ActionTypes.LOGIN_LOGIN_SUCCESS] = (state:Map<string, any>, action: TSType.IReduxAction) => {
+    return state.set('loginStatus', action.payload);
 };
 
-reducers[ActionType.LOGIN_DOWN_LOAD_SUPPORT_COUNTRIES] = (state:Map<string, any>, action: TSType.IReduxAction) => {
+reducers[ActionTypes.LOGIN_CHECK_LOGIN_TYPE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
+    return state.withMutations(state => {
+        state.set('loginType', action.payload);
+        state.set('loginMobile', '');
+        state.set('loginPassword', '');
+        state.set('registerCode', '');
+        state.set('registerMobile', '')
+    })
+};
+
+reducers[ActionTypes.LOGIN_DOWN_LOAD_SUPPORT_COUNTRIES] = (state:Map<string, any>, action: TSType.IReduxAction) => {
     return state.set('supportCountries', action.payload);
 };
 
-reducers[ActionType.LOGIN_REGISTER_CHECK_ACCEPT_CODE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
+reducers[ActionTypes.LOGIN_REGISTER_CHECK_ACCEPT_CODE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
     return state.withMutations((state) => {
         state.set('acceptCodeType', action.payload);
         state.set('registerCode', '')
     })
 };
 
-reducers[ActionType.LOGIN_REGISTER_SELECTED_COUNTRY] = (state:Map<string, any>, action: TSType.IReduxAction) => {
+reducers[ActionTypes.LOGIN_REGISTER_SELECTED_COUNTRY] = (state:Map<string, any>, action: TSType.IReduxAction) => {
     return state.set('normalCountry', action.payload);
 };
 
-reducers[ActionType.LOGIN_REGISTER_CODE_CHANGE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
+reducers[ActionTypes.LOGIN_REGISTER_CODE_CHANGE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
     return state.set('registerCode', action.payload);
 };
 
-reducers[ActionType.LOGIN_RESISTER_MOBILE_CHANGE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
+reducers[ActionTypes.LOGIN_RESISTER_MOBILE_CHANGE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
     return state.set('registerMobile', action.payload);
 };
 
-reducers[ActionType.LOGIN_MOBILE_EMAIL_MOBILE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
+reducers[ActionTypes.LOGIN_MOBILE_EMAIL_MOBILE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
     return state.set('loginMobile', action.payload);
 };
 
-reducers[ActionType.LOGIN_MOBILE_EMAIL_PASSWORD] = (state:Map<string, any>, action: TSType.IReduxAction) => {
+reducers[ActionTypes.LOGIN_MOBILE_EMAIL_PASSWORD] = (state:Map<string, any>, action: TSType.IReduxAction) => {
     return state.set('loginPassword', action.payload);
 };
 
 
-
-
-
-const LoginReducer = handleActions(reducers, initialState);
-
-export default LoginReducer
+export default handleActions(reducers, initialState)

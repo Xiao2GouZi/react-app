@@ -1,7 +1,6 @@
 
 import * as React from 'react'
-import '../index.less'
-import Config from "../../../config";
+import Config from "@/config";
 
 export default class Footer extends React.PureComponent<any, any> {
 

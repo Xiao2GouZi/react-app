@@ -1,16 +1,17 @@
 import * as React from 'react'
 import {connect} from 'react-redux'
-import { IRegisterPros , ERegisterCheckAcceptCode, IRegisterPropsActions, ELoginType} from "../../../type";
 import {bindActionCreators, Dispatch} from "redux";
-import * as LoginAction from "../action";
 import {Select, Input, Divider, Button} from 'antd'
-import '../index.less'
+
+
+import * as TSType from "@/type";
+import * as LoginAction from "../action";
 
 let Option = Select.Option;
 
 
 
-class MobileLogin extends React.PureComponent<IRegisterPros & IRegisterPropsActions, any>  {
+class MobileLogin extends React.PureComponent<TSType.IRegisterPros & TSType.IRegisterPropsActions, any>  {
 
     render() {
         let {supportCountries, normalCountry, acceptCodeType, registerMobile, registerCode, loginType} = this.props;
@@ -37,22 +38,22 @@ class MobileLogin extends React.PureComponent<IRegisterPros & IRegisterPropsActi
                 </div>
                 <Divider/>
                 <div className={'input-code'}>
-                    <Input placeholder={acceptCodeType === ERegisterCheckAcceptCode.Voice ? '输入6位语音验证码' : '输入6位短信验证码'}
+                    <Input placeholder={acceptCodeType === TSType.ERegisterCheckAcceptCode.Voice ? '输入6位语音验证码' : '输入6位短信验证码'}
                            style={{ width: '50%' }}
                            className={'input-mobile'}
                            onChange={this.codeChange}
                            value={registerCode}/>
-                    <Button className={'verification-code button-item '}>{acceptCodeType === ERegisterCheckAcceptCode.Voice ? '获取语音验证码' : '获取短信验证码'}</Button>
+                    <Button className={'verification-code button-item '}>{acceptCodeType === TSType.ERegisterCheckAcceptCode.Voice ? '获取语音验证码' : '获取短信验证码'}</Button>
                 </div>
                 <Divider/>
 
                 <div className={'check-voice-message'}>
-                    {loginType === ELoginType.MobileCode ?
+                    {loginType === TSType.ELoginType.MobileCode ?
                         <Button className={'button-item'}
                                 onClick={this.checkLoginType}>密码登录（手机号或邮箱）</Button>
                          : null
                     }
-                    <span onClick={this.checkVoiceOrMessageCode}>{acceptCodeType === ERegisterCheckAcceptCode.Voice ? '接受语音验证码' : '接受短信验证码'}</span>
+                    <span onClick={this.checkVoiceOrMessageCode}>{acceptCodeType === TSType.ERegisterCheckAcceptCode.Voice ? '接受语音验证码' : '接受短信验证码'}</span>
                 </div>
             </div>
         )
@@ -87,7 +88,7 @@ class MobileLogin extends React.PureComponent<IRegisterPros & IRegisterPropsActi
      * */
     checkVoiceOrMessageCode = () => {
         let {actionCheckAcceptCode, acceptCodeType} = this.props;
-        let newVar = acceptCodeType === ERegisterCheckAcceptCode.Voice ? ERegisterCheckAcceptCode.Message : ERegisterCheckAcceptCode.Voice;
+        let newVar = acceptCodeType === TSType.ERegisterCheckAcceptCode.Voice ? TSType.ERegisterCheckAcceptCode.Message : TSType.ERegisterCheckAcceptCode.Voice;
         actionCheckAcceptCode(newVar)
     };
 
@@ -95,7 +96,7 @@ class MobileLogin extends React.PureComponent<IRegisterPros & IRegisterPropsActi
      *
      * */
     checkLoginType = () => {
-        this.props.checkLoginType(ELoginType.EmailOrMobile)
+        this.props.checkLoginType(TSType.ELoginType.EmailOrMobile)
     }
 
 
@@ -109,16 +110,8 @@ class MobileLogin extends React.PureComponent<IRegisterPros & IRegisterPropsActi
 
 
 export default connect(
-    (state: any): IRegisterPros => {
-        let reducer = state.LoginReducer.toJS();
-        return {
-            supportCountries: reducer.supportCountries,
-            normalCountry: reducer.normalCountry,
-            acceptCodeType: reducer.acceptCodeType,
-            registerCode: reducer.registerCode,
-            registerMobile: reducer.registerMobile,
-            loginType: reducer.loginType
-        }
+    (state: any): TSType.IRegisterPros => {
+        return state.LoginReducer.toJS();
     },
-    (dispatch: Dispatch): IRegisterPropsActions => bindActionCreators(LoginAction, dispatch)
+    (dispatch: Dispatch): TSType.IRegisterPropsActions => bindActionCreators(LoginAction, dispatch)
 )(MobileLogin);

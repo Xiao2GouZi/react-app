@@ -1,17 +1,18 @@
 
 import * as React from 'react'
 import {Divider, Input, Icon, Button} from 'antd'
-import {hrefForgetPassWord} from '../data'
 import {connect} from 'react-redux'
 import {bindActionCreators, Dispatch} from "redux";
 import * as LoginAction from "../action";
-import {IMobileEmailProsActions, IMobileEmailProps, ELoginType} from "../../../type";
+import * as TSType from "@/type";
+import {hrefForgetPassWord} from '../data'
 
 
-class MobileEmail extends React.PureComponent<IMobileEmailProps & IMobileEmailProsActions , any> {
+
+class MobileEmail extends React.PureComponent<TSType.IMobileEmailProps & TSType.IMobileEmailProsActions , any> {
 
     render(){
-        let {loginMobile, loginPassword} = this.props
+        let {loginMobile, loginPassword} = this.props;
         return(
             <div className={'mobile-email'}>
                 <Input placeholder={'手机号或邮箱'}
@@ -43,7 +44,7 @@ class MobileEmail extends React.PureComponent<IMobileEmailProps & IMobileEmailPr
      *  切换到验证码登录
      * */
     checkoutMobileCode = () => {
-        this.props.checkLoginType(ELoginType.MobileCode)
+        this.props.checkLoginType(TSType.ELoginType.MobileCode)
     };
 
     /**
@@ -66,14 +67,10 @@ class MobileEmail extends React.PureComponent<IMobileEmailProps & IMobileEmailPr
 
 
 export default connect(
-    (state: any): IMobileEmailProps => {
-        let reducer = state.LoginReducer.toJS();
-        return {
-            loginMobile: reducer.loginMobile,
-            loginPassword: reducer.loginPassword
-        }
+    (state: any): TSType.IMobileEmailProps => {
+        return state.LoginReducer.toJS();
     },
-    (dispatch: Dispatch): IMobileEmailProsActions => bindActionCreators(LoginAction, dispatch)
+    (dispatch: Dispatch): TSType.IMobileEmailProsActions => bindActionCreators(LoginAction, dispatch)
 )(MobileEmail);
 
 
