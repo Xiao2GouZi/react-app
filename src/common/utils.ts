@@ -78,14 +78,14 @@ export const dataNoEmpty = (data: any) => {
 
 const dataObject = (object: Object) => {
     for (let key in object) {
-        object[key] = dataType(object[key]);
+        object[key] = dataNoEmpty(object[key]);
     }
     return object
 };
 
 const dataArray = (array: Array<any>) => {
     return array.map(item => {
-        return dataType(item)
+        return dataNoEmpty(item)
     })
 };
 
