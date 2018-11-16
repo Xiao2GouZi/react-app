@@ -1,18 +1,16 @@
-
 import * as React from 'react'
-import {Divider, Input, Icon, Button} from 'antd'
-import {connect} from 'react-redux'
-import {bindActionCreators, Dispatch} from "redux";
+import { Divider, Input, Icon, Button } from 'antd'
+import { connect} from 'react-redux'
+import { bindActionCreators, Dispatch } from "redux";
+
 import * as LoginAction from "../action";
-import * as TSType from "@/type";
-import {hrefForgetPassWord} from '../data'
-
-
+import * as TSType from "&/type";
+import { hrefForgetPassWord } from '../data'
 
 class MobileEmail extends React.PureComponent<TSType.IMobileEmailProps & TSType.IMobileEmailProsActions , any> {
 
-    render(){
-        let {loginMobile, loginPassword} = this.props;
+    public render(){
+        const {loginMobile, loginPassword} = this.props;
         return(
             <div className={'mobile-email'}>
                 <Input placeholder={'手机号或邮箱'}
@@ -42,29 +40,25 @@ class MobileEmail extends React.PureComponent<TSType.IMobileEmailProps & TSType.
 
     /**
      *  切换到验证码登录
-     * */
-    checkoutMobileCode = () => {
-        this.props.checkLoginType(TSType.ELoginType.MobileCode)
+     */
+    private checkoutMobileCode = () => {
+        this.props.actionCheckLoginType(TSType.ELoginType.MobileCode)
     };
 
     /**
      *  手机号码改变
-     * */
-    changeMobile = (e: any) => {
+     */
+    private changeMobile = (e: any) => {
         this.props.actionMobileEmailChangeMobile(e.target.value)
     };
 
     /**
      *  输入密码
-     * */
-    changePassword = (e: any) => {
+     */
+    private changePassword = (e: any) => {
         this.props.actionMobileEmailChangePassword(e.target.value)
     }
-
-
-
 }
-
 
 export default connect(
     (state: any): TSType.IMobileEmailProps => {
@@ -72,7 +66,3 @@ export default connect(
     },
     (dispatch: Dispatch): TSType.IMobileEmailProsActions => bindActionCreators(LoginAction, dispatch)
 )(MobileEmail);
-
-
-
-// export default MobileEmail

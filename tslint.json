@@ -1,5 +1,8 @@
 {
-  "extends": [],
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier"
+  ],
   "defaultSeverity": "warning",
   "linterOptions": {
     "exclude": [
@@ -9,6 +12,13 @@
     ]
   },
   "rules": {
-    "no-empty": true
+    "no-empty": true,
+    "ordered-imports": false,
+    "no-implicit-dependencies": false,
+    "no-submodule-imports": [true, "dev", "&"],
+    "object-literal-sort-keys": false,
+    "no-unused-expression": [true, "allow-fast-null-checks"],
+    "no-object-literal-type-assertion": false,
+    "no-console": [true, "log", "error"]
   }
 }

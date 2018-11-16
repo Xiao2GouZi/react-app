@@ -2,8 +2,8 @@
  * 网络层封装
  */
 
-import {IAsyncResult, IResponse} from '@/type';
-import Config from '@/config';
+import {IAsyncResult, IResponse} from '&/type';
+import Config from '&/config';
 import {urlQuery} from './utils'
 
 
@@ -15,7 +15,7 @@ interface IRequestCommonParam {
 
 
 export async function Common<T = any>(param: IRequestCommonParam): Promise<IAsyncResult<T>> {
-    let headers: HeadersInit = {
+    const headers: HeadersInit = {
         'Content-Type': 'application/json; charset=utf-8',
         'credentials': 'omit'
     };
@@ -34,15 +34,15 @@ export async function Common<T = any>(param: IRequestCommonParam): Promise<IAsyn
         timeoutId && clearTimeout(timeoutId);
         const responseData: IResponse = await response.json();
         const { message, data, status} = responseData;
-        let ret = {
+        const ret = {
             res: status ? data : {} as T,
-            err: status != 1 ? message : null,
+            err: status !== 1 ? message : null,
         };
         return ret;
     } catch (err) {
         timeoutId && clearTimeout(timeoutId);
-        let msgText: string = '网络请求失败,请检查网络';
-        return { res: {} as T, err: msgText};
+        const res: {res: any, err: string} = { res: {}, err: '网络请求失败,请检查网络'};
+        return res;
     }
 }
 
@@ -83,7 +83,7 @@ const Put = <T = any>(param: IRequestCommonParam): Promise<IAsyncResult<T>> => {
  * GET
  */
 const Get = <T = any>(param: IRequestCommonParam): Promise<IAsyncResult<T>> => {
-    let url = param.body ? `${param.url}${urlQuery(param.body)}` : param.url;
+    const url = param.body ? `${param.url}${urlQuery(param.body)}` : param.url;
     return Common<T>({
         url,
         init: param.init ? param.init : {

@@ -19,7 +19,7 @@
     "noUnusedLocals": true,
     "allowJs": true,
     "paths": {
-      "@/*": [
+      "&/*": [
         "src/*"
       ]
     }

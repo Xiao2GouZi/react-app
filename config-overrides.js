@@ -50,7 +50,7 @@ module.exports = function override(config, env) {
 
     config.resolve.alias = {
         ...config.resolve.alias,
-        '@': resolve('src'),
+        '&': resolve('src'),
     };
 
 

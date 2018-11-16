@@ -1,13 +1,13 @@
 import {Map} from 'immutable'
 import { handleActions } from 'redux-actions';
 
-import * as TSType from '@/type'
-import * as ActionTypes from '@/redux/action-type'
+import * as TSType from '&/type'
+import * as ActionTypes from '&/redux/action-type'
 
 const initialState:Map<string, any> = Map({
     loginRegister: TSType.ELoginOrRegister.login,
     loginRegisterLoading: false,
-    loginStatus: true,
+    loginStatus: false,
     loginType: TSType.ELoginType.EmailOrMobile,
     supportCountries: [],
     normalCountry: {
@@ -23,7 +23,7 @@ const initialState:Map<string, any> = Map({
     loginPassword: ''
 });
 
-let reducers = {};
+const reducers = {};
 reducers[ActionTypes.LOGIN_CHECK_LOGIN_OR_REGISTER] = (state:Map<string, any>, action: TSType.IReduxAction) => {
     return state.set('loginRegister', action.payload);
 };
@@ -37,12 +37,12 @@ reducers[ActionTypes.LOGIN_LOGIN_SUCCESS] = (state:Map<string, any>, action: TST
 };
 
 reducers[ActionTypes.LOGIN_CHECK_LOGIN_TYPE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
-    return state.withMutations(state => {
-        state.set('loginType', action.payload);
-        state.set('loginMobile', '');
-        state.set('loginPassword', '');
-        state.set('registerCode', '');
-        state.set('registerMobile', '')
+    return state.withMutations(mutator => {
+        mutator.set('loginType', action.payload);
+        mutator.set('loginMobile', '');
+        mutator.set('loginPassword', '');
+        mutator.set('registerCode', '');
+        mutator.set('registerMobile', '')
     })
 };
 
@@ -51,9 +51,9 @@ reducers[ActionTypes.LOGIN_DOWN_LOAD_SUPPORT_COUNTRIES] = (state:Map<string, any
 };
 
 reducers[ActionTypes.LOGIN_REGISTER_CHECK_ACCEPT_CODE] = (state:Map<string, any>, action: TSType.IReduxAction) => {
-    return state.withMutations((state) => {
-        state.set('acceptCodeType', action.payload);
-        state.set('registerCode', '')
+    return state.withMutations(mutator => {
+        mutator.set('acceptCodeType', action.payload);
+        mutator.set('registerCode', '')
     })
 };
 

@@ -1,20 +1,19 @@
 
 import * as React from 'react'
-import Config from "@/config";
+import Config from "&/config";
 
 export default class Footer extends React.PureComponent<any, any> {
 
-    links = [
+    private links = [
         {title: '知乎专栏', path: 'https://zhuanlan.zhihu.com'},
         {title: '圆桌', path: `${Config.host}roundtable`},
         {title: '发现', path: `${Config.host}explore`},
         {title: '移动应用', path: `${Config.host}app`},
         {title: '联系我们', path: `${Config.host}contact`},
         {title: '来知乎工作', path: 'https://app.mokahr.com/apply/zhihu'},
-        {title: '注册机构号', path: `${Config.host}/org/signup`},];
+        {title: '注册机构号', path: `${Config.host}/org/signup`}];
 
-
-    render(){
+    public render(){
         return(
             <div className={'footer'}>
                 <div className={'_link'}>
@@ -48,7 +47,7 @@ export default class Footer extends React.PureComponent<any, any> {
         )
     }
 
-    aElement = ({title='', href=''}) => {
+    private aElement = ({title='', href=''}) => {
         return(
             <a href={href}
                rel="noopener noreferrer"
@@ -56,14 +55,4 @@ export default class Footer extends React.PureComponent<any, any> {
                key={title}>{title}</a>
         )
     }
-
-
-
-
-
-
-
-
-
-
 }

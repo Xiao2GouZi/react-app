@@ -1,11 +1,9 @@
-import * as LoginAction from "../app/login/action";
-
+import * as LoginAction from '../app/login/action';
 
 export interface IAsyncResult<T> {
     res: T;
     err: any;
 }
-
 
 export interface IResponse {
     data: any;
@@ -13,14 +11,12 @@ export interface IResponse {
     message: string;
 }
 
-
 export interface IConfig {
     host: string,
     requestTimeOut: number,
     isDev: boolean,
     defaultImage: string
 }
-
 
 export interface IReduxAction {
     type: string,
@@ -36,7 +32,7 @@ export interface ILoginContentPageProps {
 }
 
 export interface IQrCodePropsAction {
-    checkLoginType: typeof LoginAction.checkLoginType
+    actionCheckLoginType: typeof LoginAction.actionCheckLoginType
 }
 
 export interface ILoginContentPageActions extends IQrCodePropsAction{
@@ -46,9 +42,8 @@ export interface ILoginContentPageActions extends IQrCodePropsAction{
     downloadSupportCountries: typeof LoginAction.downloadSupportCountries
 }
 
-
 export interface IRegisterPros {
-    supportCountries: Array<ISupportCountriesItem>
+    supportCountries: ISupportCountriesItem[]
     normalCountry: ISupportCountriesItem,
     acceptCodeType: ERegisterCheckAcceptCode,
     registerMobile: string,
@@ -63,49 +58,34 @@ export interface IRegisterPropsActions extends IQrCodePropsAction{
     actionRegisterCodeChange: typeof LoginAction.actionRegisterCodeChange
 }
 
-
-
-
 export interface IMobileEmailProps {
     loginMobile: string,
     loginPassword: string
 }
-
 
 export interface IMobileEmailProsActions extends IQrCodePropsAction{
     actionMobileEmailChangeMobile: typeof LoginAction.actionMobileEmailChangeMobile,
     actionMobileEmailChangePassword: typeof LoginAction.actionMobileEmailChangePassword,
 }
 
-
 export interface IOverseasMobileProps {
-    supportCountries: Array<ISupportCountriesItem>
+    supportCountries: ISupportCountriesItem[]
     normalCountry: ISupportCountriesItem,
     loginMobile: string,
     loginPassword: string,
 }
 
-
-export interface IOverseasMobilePropsAction {
+export interface IOverseasMobilePropsAction extends IQrCodePropsAction {
     actionMobileEmailChangeMobile: typeof LoginAction.actionMobileEmailChangeMobile;
     actionMobileEmailChangePassword: typeof LoginAction.actionMobileEmailChangePassword;
     actionRegisterCodeChange: typeof LoginAction.actionRegisterCodeChange;
     actionSelectedCountry: typeof LoginAction.actionSelectedCountry;
-    checkLoginType: typeof LoginAction.checkLoginType
 }
-
-
-
-
 
 export enum ELoginOrRegister {
     login = 'login',
     register = 'register'
 }
-
-
-
-
 
 export enum ELoginType {
     QrCode = 'QrCode',
@@ -114,7 +94,6 @@ export enum ELoginType {
     EmailOrMobile = 'EmailOrMobile',
     MobileCode = 'MobileCode',
 }
-
 
 export interface ISupportCountriesItem {
     is_hot: boolean,
@@ -141,6 +120,8 @@ export enum EDataType {
     Date = 'Date'
 }
 
-
-
-
+export enum EHomeContentType {
+    Recommend = 'Recommend',
+    Favouries = 'Favouries',
+    HotExample = 'HotExample'
+}

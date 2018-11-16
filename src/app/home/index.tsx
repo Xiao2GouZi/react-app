@@ -1,51 +1,74 @@
 
 import * as React from 'react'
 import { connect } from 'react-redux'
-import {bindActionCreators} from 'redux';
-import { Button } from 'antd';
+import { bindActionCreators } from 'redux';
+import { Row, Col, Layout, Menu} from 'antd'
 
 import  * as HomeAction from './actions'
+
+const { Header, Content } = Layout;
 
 
 interface IHomeProps {
     number: number,
     loading: boolean,
     loadDataErr: string,
-
 }
 
 interface IHomeActionProps {
-    downloadData: typeof HomeAction.downloadData,
-    increase: typeof HomeAction.increase,
-    selected: typeof HomeAction.selected,
-    decrease: typeof HomeAction.decrease
+    actionDownloadData: typeof HomeAction.actionDownloadData,
 }
 
 
 class Home extends React.PureComponent<IHomeProps & IHomeActionProps>{
 
-    componentDidMount() {
-        this.props.downloadData();
+    public componentDidMount() {
+        this.props.actionDownloadData(true);
     }
 
 
-
-
-    render() {
-        let {number, increase, selected, decrease, loading, loadDataErr} = this.props;
+    public render() {
         return (
-            <div>
-                Some state changes:
-                {number}
+            <div className={'home-content'}>
 
-                <div>{loadDataErr}</div>
+                <Row type={'flex'}
+                     justify={'center'}
+                     gutter={16}
+                     align={'top'}
+                     style={{margin: '10px auto'}}>
 
-                <Button onClick={() => increase(1)}>Increase</Button>
-                <Button onClick={() => decrease(1)}>Decrease</Button>
-                <Button onClick={() => selected('/test')}>点我</Button>
-                {
-                    loading && <div>加载中</div>
-                }
+                    <Col span={11} >
+                        <Header className={'header'}>
+                            <Menu theme="light"
+                                  mode="horizontal"
+                                  defaultSelectedKeys={['1']}
+                                  className={'menu'}>
+                                <Menu.Item key="1">推荐</Menu.Item>
+                                <Menu.Item key="2">关注</Menu.Item>
+                                <Menu.Item key="3">热销</Menu.Item>
+                            </Menu>
+                        </Header>
+                        <Content>
+                            <div style={{background: '#fff'}}>0998098aksdajshda</div>
+                        </Content>
+                    </Col>
+                    <Col span={5} >
+                        <div style={{background: 'yellow'}}>askdjalskdjaksd</div>
+
+                    </Col>
+
+
+
+                </Row>
+
+
+
+
+
+
+
+
+
             </div>
         )
     }
@@ -53,13 +76,6 @@ class Home extends React.PureComponent<IHomeProps & IHomeActionProps>{
 
 
 export default  connect(
-    (state: any): IHomeProps => {
-        let reducer = state.HomeReducer.toJS();
-        return {
-            number: reducer.number,
-            loading: reducer.loading,
-            loadDataErr: reducer.loadDataErr
-        }
-    },
+    (state: any): IHomeProps =>  state.HomeReducer.toJS(),
     (dispatch: any): IHomeActionProps => bindActionCreators(HomeAction, dispatch)
 )(Home)

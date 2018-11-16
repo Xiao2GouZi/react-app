@@ -1,5 +1,5 @@
 
-import {MiddlewareAPI, Dispatch} from 'redux'
+import { MiddlewareAPI, Dispatch } from 'redux'
 
 export const BATCH = 'ENHANCED_BATCHING.BATCH';
 export const PUSH = 'ENHANCED_BATCHING.PUSH';
@@ -15,7 +15,7 @@ export function batchMiddleware(middlewareApi: MiddlewareAPI) {
             switch (action.type) {
                 case BATCH: {
                     middlewareApi.dispatch({ type: PUSH });
-                    const returnArray: Array<Dispatch> = [];
+                    const returnArray: Dispatch[] = [];
                     action.payload.forEach((batchedAction: any) => {
                         returnArray.push(middlewareApi.dispatch(batchedAction));
                     });
@@ -31,7 +31,7 @@ export function batchMiddleware(middlewareApi: MiddlewareAPI) {
 }
 
 export function batchStoreEnhancer(next: any) {
-    let currentListeners:Array<any> = [];
+    let currentListeners: any[] = [];
     let nextListeners = currentListeners;
     function ensureCanMutateNextListeners() {
         if (nextListeners === currentListeners) {
@@ -57,9 +57,9 @@ export function batchStoreEnhancer(next: any) {
     }
     function notifyListeners() {
         const listeners = currentListeners = nextListeners;
-        for (let i = 0; i < listeners.length; i++) {
-            listeners[i]();
-        }
+        listeners.forEach(item => {
+            item()
+        })
     }
     return (...args: any) => {
         const store = next(...args);

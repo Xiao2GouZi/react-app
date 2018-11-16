@@ -1,13 +1,12 @@
 
-import {EDataType} from '@/type'
-import * as TSTypes from "@/type";
+import * as TSTypes from "&/type";
 
 /**
  * object 拼接到url后
- * */
-export const urlQuery = (param: Object) => {
-    let arr = [];
-    for(let i in param){
+ */
+export const urlQuery = (param: object) => {
+    const arr = [];
+    for(const i in param){
         if (param.hasOwnProperty(i)) {
             arr.push(encodeURIComponent(i) + "=" + encodeURIComponent(param[i]));
         }
@@ -17,13 +16,13 @@ export const urlQuery = (param: Object) => {
 
 /**
  * url-query转成object
- * */
+ */
 export const urlObject = (url: string) => {
-    let param = url.split('?')[1].split('&');
-    let res = {};
+    const param = url.split('?')[1].split('&');
+    const res = {};
     param.forEach(item => {
-        let str = item.split('=');
-        if(str[0]!=''){
+        const str = item.split('=');
+        if( str[0] !== '' ) {
             res[str[0]]=str[1];
         }
     });
@@ -45,16 +44,16 @@ export const urlObject = (url: string) => {
  *  /at/      ---->   RegExp
  *  new Date()---->   Date
  *
- * */
-export const dataType = (data: any): EDataType => {
-    let string = Object.prototype.toString.call(data)
-    let _type = string.split(' ')[1];
-    return _type.slice(0, _type.length - 1)
+ */
+export const dataType = (data: any): TSTypes.EDataType => {
+    const stringPro = Object.prototype.toString.call(data);
+    const type = stringPro.split(' ')[1];
+    return type.slice(0, type.length - 1)
 };
 
 /**
  *  过滤数据中的null, undefined为空字符串
- * */
+ */
 export const dataNoEmpty = (data: any) => {
     switch (dataType(data)) {
         case TSTypes.EDataType.Object: {
@@ -76,14 +75,16 @@ export const dataNoEmpty = (data: any) => {
     return data
 };
 
-const dataObject = (object: Object) => {
-    for (let key in object) {
-        object[key] = dataNoEmpty(object[key]);
+const dataObject = (object: object) => {
+    for (const key in object) {
+        if (object.hasOwnProperty(key)) {
+            object[key] = dataNoEmpty(object[key]);
+        }
     }
     return object
 };
 
-const dataArray = (array: Array<any>) => {
+const dataArray = (array: any[]) => {
     return array.map(item => {
         return dataNoEmpty(item)
     })

@@ -1,7 +1,7 @@
 
-import {IConfig} from '@/type'
+import {IConfig} from '&/type'
 
-const Config = {
+const Config: IConfig = {
 
     host: 'https://www.zhihu.com/',
     requestTimeOut: 10,
@@ -10,7 +10,7 @@ const Config = {
     defaultImage: 'https://pic.qianmi.com/qmui/app/img/default_square.png'
 
 
-} as IConfig;
+};
 
 
 export default Config

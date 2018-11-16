@@ -1,36 +1,15 @@
 
-import { push } from 'react-router-redux';
+// import { push } from 'react-router-redux';
 import { createAction } from 'redux-actions';
-import {Dispatch} from 'redux'
+// import {Dispatch} from 'redux'
 
-// import * as WebApi from './web-api';
-// import {ReduxBatch} from '../../redux'
-import {HOME_DECREASE, HOME_INCREASE, HOME_LOAD_DATA_FAIL, HOME_LOAD_DATA_SUCCESS, HOME_LOADING} from '../../redux/action-type';
+import { HOME_LOAD_DATA_FAIL, HOME_LOAD_DATA_SUCCESS, HOME_LOADING } from '&/redux/action-type';
 
 
+export const actionDownloadData = createAction(HOME_LOADING, (n: boolean) => n);
 
-export const increase =  createAction(HOME_INCREASE ,(n: number) => n);
+export const actionLoadDateSuccess = createAction(HOME_LOAD_DATA_SUCCESS, (data: any) => data);
 
-export const decrease =  createAction(HOME_DECREASE ,(n: number) => n);
+export const actionLoadDataFail = createAction(HOME_LOAD_DATA_FAIL, (err: string) => err);
 
-export const loadData = createAction(HOME_LOADING, (loading: boolean) => loading);
-
-export const loadDateSuccess = createAction(HOME_LOAD_DATA_SUCCESS, (data: any) => data);
-
-export const loadDataFail = createAction(HOME_LOAD_DATA_FAIL, (err: string) => err);
-
-export const downloadData = () => {
-    return async (dispatch: Dispatch) => {
-        dispatch(loadData(true));
-
-    }
-};
-
-
-
-export const selected = (path: string) => {
-    return (dispatch: Dispatch) => {
-        dispatch(push(path))
-    }
-};
 

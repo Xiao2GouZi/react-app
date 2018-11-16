@@ -1,20 +1,17 @@
 import * as React from 'react'
-import {connect} from 'react-redux'
-import {bindActionCreators, Dispatch} from "redux";
-import {Select, Input, Divider, Button} from 'antd'
+import { connect } from 'react-redux'
+import { bindActionCreators, Dispatch } from "redux";
+import { Select, Input, Divider, Button } from 'antd'
 
-
-import * as TSType from "@/type";
+import * as TSType from "&/type";
 import * as LoginAction from "../action";
 
-let Option = Select.Option;
-
-
+const Option = Select.Option;
 
 class MobileLogin extends React.PureComponent<TSType.IRegisterPros & TSType.IRegisterPropsActions, any>  {
 
-    render() {
-        let {supportCountries, normalCountry, acceptCodeType, registerMobile, registerCode, loginType} = this.props;
+    public render() {
+        const {supportCountries, normalCountry, acceptCodeType, registerMobile, registerCode, loginType} = this.props;
         return (
             <div className={'register'}>
                 <div className={'mobile'}>
@@ -46,7 +43,6 @@ class MobileLogin extends React.PureComponent<TSType.IRegisterPros & TSType.IReg
                     <Button className={'verification-code button-item '}>{acceptCodeType === TSType.ERegisterCheckAcceptCode.Voice ? '获取语音验证码' : '获取短信验证码'}</Button>
                 </div>
                 <Divider/>
-
                 <div className={'check-voice-message'}>
                     {loginType === TSType.ELoginType.MobileCode ?
                         <Button className={'button-item'}
@@ -59,55 +55,44 @@ class MobileLogin extends React.PureComponent<TSType.IRegisterPros & TSType.IReg
         )
     }
 
-
     /**
      *  选择国家
-     * */
-    selectedCountry = (key: string) => {
-        let {actionSelectedCountry, supportCountries} = this.props;
+     */
+    private selectedCountry = (key: string) => {
+        const {actionSelectedCountry, supportCountries} = this.props;
         actionSelectedCountry(supportCountries[Number(key)])
     };
 
     /**
      *  电话号码
-     * */
-    mobileChange = (e: any) => {
+     */
+    private mobileChange = (e: any) => {
         this.props.actionRegisterMobileChange(e.target.value)
     };
 
     /**
      *  验证码
-     * */
-    codeChange = (e: any) => {
+     */
+    private codeChange = (e: any) => {
         this.props.actionRegisterCodeChange(e.target.value)
     };
 
-
     /**
      *  切换语音验证码和短信验证码
-     * */
-    checkVoiceOrMessageCode = () => {
-        let {actionCheckAcceptCode, acceptCodeType} = this.props;
-        let newVar = acceptCodeType === TSType.ERegisterCheckAcceptCode.Voice ? TSType.ERegisterCheckAcceptCode.Message : TSType.ERegisterCheckAcceptCode.Voice;
+     */
+    private checkVoiceOrMessageCode = () => {
+        const {actionCheckAcceptCode, acceptCodeType} = this.props;
+        const newVar = acceptCodeType === TSType.ERegisterCheckAcceptCode.Voice ? TSType.ERegisterCheckAcceptCode.Message : TSType.ERegisterCheckAcceptCode.Voice;
         actionCheckAcceptCode(newVar)
     };
 
     /**
-     *
-     * */
-    checkLoginType = () => {
-        this.props.checkLoginType(TSType.ELoginType.EmailOrMobile)
+     *  切换登录模式
+     */
+    private checkLoginType = () => {
+        this.props.actionCheckLoginType(TSType.ELoginType.EmailOrMobile)
     }
-
-
-
-
-
 }
-
-
-
-
 
 export default connect(
     (state: any): TSType.IRegisterPros => {

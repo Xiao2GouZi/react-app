@@ -1,19 +1,19 @@
 
 import * as React from 'react'
-import {connect} from 'react-redux'
-import {bindActionCreators, Dispatch} from "redux";
-import {Select, Divider, Input, Icon, Button} from 'antd'
+import { connect} from 'react-redux'
+import { bindActionCreators, Dispatch } from "redux";
+import { Select, Divider, Input, Icon, Button } from 'antd'
 
 import * as LoginAction from "../action";
-import * as TSType from "@/type";
-import {hrefForgetPassWord} from "../data";
+import * as TSType from "&/type";
+import { hrefForgetPassWord } from "../data";
 
-let Option = Select.Option;
+const Option = Select.Option;
 
 class OverseasMobile extends React.PureComponent<TSType.IOverseasMobileProps & TSType.IOverseasMobilePropsAction, any> {
 
-    render(){
-        let {normalCountry, supportCountries, loginPassword, loginMobile} = this.props;
+    public render(){
+        const {normalCountry, supportCountries, loginPassword, loginMobile} = this.props;
         return(
             <div className={'overseas-mobile'}>
                 <div className={'mobile'}>
@@ -58,35 +58,33 @@ class OverseasMobile extends React.PureComponent<TSType.IOverseasMobileProps & T
 
     /**
      *  切换到验证码登录
-     * */
-    checkoutMobileCode = () => {
-        this.props.checkLoginType(TSType.ELoginType.MobileCode)
+     */
+   private checkoutMobileCode = () => {
+        this.props.actionCheckLoginType(TSType.ELoginType.MobileCode)
     };
 
 
     /**
      *  选择国家
-     * */
-    selectedCountry = (key: string) => {
-        let {actionSelectedCountry, supportCountries} = this.props;
+     */
+    private selectedCountry = (key: string) => {
+        const {actionSelectedCountry, supportCountries} = this.props;
         actionSelectedCountry(supportCountries[Number(key)])
     };
 
     /**
      *  电话号码
-     * */
-    mobileChange = (e: any) => {
+     */
+    private mobileChange = (e: any) => {
         this.props.actionMobileEmailChangeMobile(e.target.value)
     };
 
     /**
      *  输入密码
-     * */
-    changePassword = (e: any) => {
+     */
+    private changePassword = (e: any) => {
         this.props.actionMobileEmailChangePassword(e.target.value)
     }
-
-
 }
 
 export default connect(
